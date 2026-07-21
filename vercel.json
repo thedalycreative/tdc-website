@@ -1,0 +1,14 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/process.html", "destination": "/services#process", "permanent": true },
+    { "source": "/cyber-security.html", "destination": "/services#security", "permanent": true },
+    { "source": "/ai-tools.html", "destination": "/services#ai", "permanent": true },
+    { "source": "/styleguide.html", "destination": "/prototype/style-tiles.html", "permanent": true },
+    { "source": "/blog-strategic-logic-beats-pretty-pixels.html", "destination": "/blog/strategic-logic-beats-pretty-pixels", "permanent": true },
+    { "source": "/blog-practical-ai-small-business.html", "destination": "/blog/practical-ai-small-business", "permanent": true },
+    { "source": "/blog-real-cost-of-a-cheap-website.html", "destination": "/blog/real-cost-of-a-cheap-website", "permanent": true },
+    { "source": "/blog-cyber-security-basics-perth-business.html", "destination": "/blog/cyber-security-basics-perth-business", "permanent": true }
+  ]
+}

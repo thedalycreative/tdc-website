@@ -21,14 +21,24 @@ const types = {
 };
 
 createServer(async (req, res) => {
+  const path = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+  // mirrors Vercel's cleanUrls behaviour: /services → services.html, /blog → blog/index.html
+  const candidates = path.endsWith('/')
+    ? [path + 'index.html']
+    : [path, path + '.html', path + '/index.html'];
+  for (const candidate of candidates) {
+    const file = normalize(join(root, candidate));
+    if (!file.startsWith(root)) break;
+    try {
+      const data = await readFile(file);
+      res.writeHead(200, { 'content-type': types[extname(file)] ?? 'application/octet-stream' });
+      res.end(data);
+      return;
+    } catch { /* try next candidate */ }
+  }
   try {
-    let path = decodeURIComponent(new URL(req.url, 'http://x').pathname);
-    if (path.endsWith('/')) path += 'index.html';
-    const file = normalize(join(root, path));
-    if (!file.startsWith(root)) { res.writeHead(403).end(); return; }
-    const data = await readFile(file);
-    res.writeHead(200, { 'content-type': types[extname(file)] ?? 'application/octet-stream' });
-    res.end(data);
+    const notFound = await readFile(join(root, '404.html'));
+    res.writeHead(404, { 'content-type': 'text/html; charset=utf-8' }).end(notFound);
   } catch {
     res.writeHead(404, { 'content-type': 'text/plain' }).end('not found');
   }

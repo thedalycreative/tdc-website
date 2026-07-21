@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!--===== HEAD TAGS =====-->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!--Page Title-->
+	<title>Services | The Daly Creative</title>
+	<!--Description-->
+	<meta name="description"
+		content="Premium web design, branding, AI strategy, and automation services. We help brands grow through design, tech, and tools that think with you." />
+	<!--Favicon-->
+	<link rel="icon" type="image/png" href="images/icons/icon-x256.png" />
+	<!--Bootstrap Icons-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+	<!-- Flaticon UICONS -->
+	<link rel="stylesheet"
+		href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css" />
+	<link rel="stylesheet"
+		href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css" />
+	<!--Main Stylesheet-->
+	<link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+	<!-- ===== NAV BAR ===== -->
+	<nav>
+		<div class="nav-container">
+			<a href="index.html" class="logo">
+				<img src="images/icons/logo-1300x507.png" alt="The Daly Creative" height="42" />
+			</a>
+
+			<input type="checkbox" id="nav-toggle" class="nav-toggle" />
+			<label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+				<span></span><span></span><span></span>
+			</label>
+
+			<ul class="nav-links">
+				<li data-color="orange">
+					<a href="index.html">Home</a>
+				</li>
+				<li class="nav-has-dropdown" data-color="teal">
+					<a href="services.html" class="active">
+						Services <i class="bi bi-chevron-down nav-chevron"></i>
+					</a>
+					<div class="nav-dropdown">
+						<div class="nav-dropdown-grid">
+							<a href="services.html#web-dev" class="nav-dropdown-card">
+								<i class="fi fi-rr-browser nav-dropdown-icon"></i>
+								<div><strong>Web Development</strong><span>Fast, beautiful, conversion-ready sites</span></div>
+							</a>
+							<a href="services.html#brand-identity" class="nav-dropdown-card">
+								<i class="fi fi-rr-palette nav-dropdown-icon"></i>
+								<div><strong>Brand Identity</strong><span>Logos, guidelines, visual systems</span></div>
+							</a>
+							<a href="services.html#seo" class="nav-dropdown-card">
+								<i class="fi fi-rr-chart-line-up nav-dropdown-icon"></i>
+								<div><strong>SEO & Growth</strong><span>Get found, get leads, grow</span></div>
+							</a>
+							<a href="services.html#ai-strategy" class="nav-dropdown-card">
+								<i class="fi fi-rr-brain nav-dropdown-icon"></i>
+								<div><strong>AI Strategy</strong><span>Smart automation for real workflows</span></div>
+							</a>
+							<div class="nav-dropdown-divider"></div>
+							<a href="ai-tools.html" class="nav-dropdown-card nav-dropdown-card--dark">
+								<i class="fi fi-rr-robot nav-dropdown-icon"></i>
+								<div><strong>AI Tools & Automation</strong><span>Custom agents, chatbots, workflow systems</span></div>
+							</a>
+							<a href="cyber-security.html" class="nav-dropdown-card nav-dropdown-card--maroon">
+								<i class="fi fi-rr-shield-check nav-dropdown-icon"></i>
+								<div><strong>Cyber Security</strong><span>Protection, audits, and compliance</span></div>
+							</a>
+						</div>
+					</div>
+				</li>
+				<li data-color="purple"><a href="work.html">Work</a></li>
+				<li class="nav-has-dropdown" data-color="amber">
+					<a href="process.html">
+						Process <i class="bi bi-chevron-down nav-chevron"></i>
+					</a>
+					<div class="nav-dropdown">
+						<div class="nav-dropdown-grid">
+							<a href="process.html#discover" class="nav-dropdown-card">
+								<i class="fi fi-rr-search nav-dropdown-icon"></i>
+								<div><strong>01 Discover</strong><span>Research, goals, and strategy</span></div>
+							</a>
+							<a href="process.html#design" class="nav-dropdown-card">
+								<i class="fi fi-rr-interrogation nav-dropdown-icon"></i>
+								<div><strong>02 Design</strong><span>Wireframes, UI, and branding</span></div>
+							</a>
+							<a href="process.html#build" class="nav-dropdown-card">
+								<i class="fi fi-rr-code-simple nav-dropdown-icon"></i>
+								<div><strong>03 Build</strong><span>Development and optimization</span></div>
+							</a>
+							<a href="process.html#launch" class="nav-dropdown-card">
+								<i class="fi fi-rr-rocket-lunch nav-dropdown-icon"></i>
+								<div><strong>04 Launch</strong><span>Deployment and growth</span></div>
+							</a>
+						</div>
+					</div>
+				</li>
+				<li class="nav-has-dropdown" data-color="blue">
+					<a href="about.html">
+						About <i class="bi bi-chevron-down nav-chevron"></i>
+					</a>
+					<div class="nav-dropdown">
+						<div class="nav-dropdown-grid">
+							<a href="about.html#the-founder" class="nav-dropdown-card">
+								<i class="fi fi-rr-user nav-dropdown-icon"></i>
+								<div><strong>The Founder</strong><span>Meet Tim Daly</span></div>
+							</a>
+							<a href="about.html#values" class="nav-dropdown-card">
+								<i class="fi fi-rr-heart nav-dropdown-icon"></i>
+								<div><strong>Values</strong><span>What drives the creative work</span></div>
+							</a>
+						</div>
+					</div>
+				</li>
+				<li data-color="coral"><a href="blog.html">Blog</a></li>
+				<li><a href="contact.html" class="nav-cta">Start a Project <i class="bi bi-arrow-right nav-icon"></i></a></li>
+			</ul>
+
+			<div class="nav-overlay" onclick="document.getElementById('nav-toggle').checked = false"></div>
+		</div>
+	</nav>
+
+	<!-- ===== HERO SECTION ===== -->
+	<section class="services-hero">
+		<div class="container">
+			<div class="reveal">
+				<h1>Services Built for Growth</h1>
+				<p class="hero-subtitle">
+					Strategic design, smart technology, and automation that moves your brand forward. 
+					From foundational branding to cutting-edge AI solutions.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- ===== FILTER NAVIGATION ===== -->
+	<nav class="filter-nav reveal">
+		<div class="container">
+			<button class="filter-btn active" data-filter="all">All Services</button>
+			<button class="filter-btn" data-filter="foundation">Build Foundation</button>
+			<button class="filter-btn" data-filter="smarter">Work Smarter</button>
+			<button class="filter-btn" data-filter="scale">Scale & Support</button>
+		</div>
+	</nav>
+
+
+	<!-- ===== SERVICES GRID ===== -->
+	<main class="services-grid-wrapper">
+		<!-- SECTION 1: BUILD YOUR FOUNDATION -->
+		<section id="foundation" class="services-section" data-category="foundation">
+			<div class="container">
+				<div class="section-header reveal">
+					<div class="section-label">
+						<i class="fi fi-rr-paint-brush"></i>
+						<span>Foundation</span>
+					</div>
+					<h2>Build Your Foundation</h2>
+					<p>From logo to launch — the essentials that establish your presence and make your first impression count.</p>
+				</div>
+
+				<div class="services-grid reveal-delay-1">
+					<!-- WEB DEVELOPMENT -->
+					<div id="web-dev" class="service-card reveal-delay-1">
+						<div class="service-icon" style="color: var(--teal)">
+							<i class="fi fi-rr-browser"></i>
+						</div>
+						<h3>Custom Website Development</h3>
+						<p>
+							High-performance, mobile-responsive websites engineered to convert visitors into customers. 
+							Built on modern frameworks with SEO, accessibility, and speed built in.
+						</p>
+						<a href="#web-dev" class="card-link">Learn more →</a>
+					</div>
+
+					<!-- STRATEGIC BRANDING -->
+					<div id="brand-identity" class="service-card reveal-delay-2">
+						<div class="service-icon" style="color: var(--orange)">
+							<i class="fi fi-rr-palette"></i>
+						</div>
+						<h3>Strategic Brand Identity</h3>
+						<p>
+							Cohesive visual identities that communicate your values and stand out in your market. 
+							Includes logo design, color systems, typography, and brand guidelines for consistent impact.
+						</p>
+						<a href="#brand-identity" class="card-link">Learn more →</a>
+					</div>
+
+					<!-- LOCALIZED SEO -->
+					<div id="seo" class="service-card reveal-delay-3">
+						<div class="service-icon" style="color: var(--teal)">
+							<i class="fi fi-rr-search-alt"></i>
+						</div>
+						<h3>Localized SEO Visibility</h3>
+						<p>
+							Get found by customers searching for your services in your area. Strategic keyword optimization, 
+							local directory management, and authority building that drives qualified traffic.
+						</p>
+						<a href="#seo" class="card-link">Learn more →</a>
+					</div>
+
+					<!-- MANAGED AD CAMPAIGNS -->
+					<div id="ads" class="service-card reveal-delay-4">
+						<div class="service-icon" style="color: var(--amber)">
+							<i class="fi fi-rr-presentation"></i>
+						</div>
+						<h3>Managed Ad Campaigns</h3>
+						<p>
+							Expert campaign management across Google, Meta, and LinkedIn that maximizes ROI. 
+							Strategic targeting, continuous optimization, and transparent reporting on every dollar spent.
+						</p>
+						<a href="#ads" class="card-link">Learn more →</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 2: WORK SMARTER -->
+		<section id="smarter" class="services-section" data-category="smarter">
+			<div class="container">
+				<div class="section-header reveal">
+					<div class="section-label">
+						<i class="fi fi-rr-brain"></i>
+						<span>AI & Automation</span>
+					</div>
+					<h2>Work Smarter, Not Harder</h2>
+					<p>Intelligent tools and automation that handle repetitive work, freeing your team to focus on growth and strategy.</p>
+				</div>
+
+				<div class="services-grid reveal-delay-1">
+					<!-- AI STRATEGY -->
+					<div id="ai-strategy" class="service-card reveal-delay-1">
+						<div class="service-icon" style="color: var(--purple)">
+							<i class="fi fi-rr-brain"></i>
+						</div>
+						<h3>AI Strategy & Navigation</h3>
+						<p>
+							Identify which AI tools actually work for your business. We audit your workflows, recommend solutions, 
+							and create a roadmap for responsible, profitable AI integration.
+						</p>
+						<a href="#ai-strategy" class="card-link">Learn more →</a>
+					</div>
+
+					<!-- WORKFLOW AUTOMATION -->
+					<div id="automation" class="service-card reveal-delay-2">
+						<div class="service-icon" style="color: var(--blue)">
+							<i class="fi fi-rr-settings"></i>
+						</div>
+						<h3>Workflow Automation</h3>
+						<p>
+							Eliminate repetitive tasks with intelligent automation. From email workflows to data synchronization, 
+							we build systems that save hours each week and reduce human error.
+						</p>
+						<a href="#automation" class="card-link">Learn more →</a>
+					</div>
+
+					<!-- AI CONTENT SUPPORT -->
+					<div id="ai-content" class="service-card reveal-delay-3">
+						<div class="service-icon" style="color: var(--orange)">
+							<i class="fi fi-rr-document"></i>
+						</div>
+						<h3>AI Content Support</h3>
+						<p>
+							Brand-aligned content powered by AI across every channel. Blog posts, social media, email campaigns, 
+							and sales materials — all consistent with your voice and strategy.
+						</p>
+						<a href="#ai-content" class="card-link">Learn more →</a>
+					</div>
+
+					<!-- SMART CHATBOTS -->
+					<div id="chatbots" class="service-card reveal-delay-4">
+						<div class="service-icon" style="color: var(--teal)">
+							<i class="fi fi-rr-message-bot"></i>
+						</div>
+						<h3>Smart Chatbots</h3>
+						<p>
+							24/7 customer support that sounds like your brand. AI-powered bots handle common questions, 
+							qualify leads, and escalate complex issues to your team.
+						</p>
+						<a href="#chatbots" class="card-link">Learn more →</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 3: SCALE & SUPPORT -->
+		<section id="scale" class="services-section" data-category="scale">
+			<div class="container">
+				<div class="section-header reveal">
+					<div class="section-label">
+						<i class="fi fi-rr-chart-line-up"></i>
+						<span>Growth</span>
+					</div>
+					<h2>Scale & Support</h2>
+					<p>Data-driven insights, ongoing optimization, and strategic partnerships that accelerate your growth and adapt to market changes.</p>
+				</div>
+
+				<div class="services-grid reveal-delay-1">
+					<!-- DATA INSIGHTS -->
+					<div id="analytics" class="service-card reveal-delay-1">
+						<div class="service-icon" style="color: var(--blue)">
+							<i class="fi fi-rr-analytics"></i>
+						</div>
+						<h3>Data Insights & Analytics</h3>
+						<p>
+							Clear, actionable insights from your data. We set up tracking, analyze performance, 
+							and deliver reports that show what's working and where to invest next.
+						</p>
+						<a href="#analytics" class="card-link">Learn more →</a>
+					</div>
+
+					<!-- GROW & SUPPORT -->
+					<div id="growth" class="service-card reveal-delay-2">
+						<div class="service-icon" style="color: var(--teal)">
+							<i class="fi fi-rr-handshake"></i>
+						</div>
+						<h3>Grow & Support Plan</h3>
+						<p>
+							Ongoing partnership with monthly strategy sessions, performance optimization, 
+							and proactive updates. Your dedicated team working alongside you for sustained growth.
+						</p>
+						<a href="#growth" class="card-link">Learn more →</a>
+					</div>
+
+					<!-- TRAINING -->
+					<div id="training" class="service-card reveal-delay-3">
+						<div class="service-icon" style="color: var(--amber)">
+							<i class="fi fi-rr-graduation-cap"></i>
+						</div>
+						<h3>Training & Empowerment</h3>
+						<p>
+							Your team deserves to understand their tools. We provide comprehensive training on your systems, 
+							emerging technologies, and best practices so you can operate independently.
+						</p>
+						<a href="#training" class="card-link">Learn more →</a>
+					</div>
+
+					<!-- FUTURE-PROOFING -->
+					<div id="future-proof" class="service-card reveal-delay-4">
+						<div class="service-icon" style="color: var(--purple)">
+							<i class="fi fi-rr-shield-check"></i>
+						</div>
+						<h3>Future-Proofing</h3>
+						<p>
+							Technology moves fast. We keep your systems current, secure, and adaptable to new opportunities. 
+							Regular audits and strategic updates mean you're never left behind.
+						</p>
+						<a href="#future-proof" class="card-link">Learn more →</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- ===== FEATURED SERVICES SECTION ===== -->
+	<section class="featured-services-section">
+		<div class="container">
+			<div class="section-header reveal">
+				<h2>Specialized Expertise</h2>
+				<p>Deep knowledge in emerging technologies and security that protect your business.</p>
+			</div>
+
+			<div class="featured-services-grid">
+				<!-- AI TOOLS FEATURED -->
+				<div class="featured-service-tile featured-service-ai reveal-delay-1">
+					<div class="featured-service-content">
+						<div class="featured-service-icon">
+							<i class="fi fi-rr-brain"></i>
+						</div>
+						<h3>Custom AI Agents</h3>
+						<p>
+							Purpose-built GPT agents trained on your brand, products, and processes. 
+							Deeper intelligence than generic tools — tailored specifically for your business needs.
+						</p>
+						<a href="#ai-strategy" class="featured-service-btn">Explore AI Solutions</a>
+					</div>
+				</div>
+
+				<!-- CYBER SECURITY FEATURED -->
+				<div class="featured-service-tile featured-service-cyber reveal-delay-2">
+					<div class="featured-service-content">
+						<div class="featured-service-icon">
+							<i class="fi fi-rr-shield-check"></i>
+						</div>
+						<h3>Cyber Security</h3>
+						<p>
+							Comprehensive security audits, threat prevention, and compliance support. 
+							Protect your business, your team, and your customers with enterprise-grade security.
+						</p>
+						<a href="cyber-security.html" class="featured-service-btn">Learn About Security</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ===== PRICING APPROACH SECTION ===== -->
+	<section class="pricing-approach">
+		<div class="container">
+			<div class="section-header reveal">
+				<h2>How We Price</h2>
+				<p>Transparent, fair pricing that reflects the value you get.</p>
+			</div>
+
+			<div class="pricing-grid reveal-delay-1">
+				<div class="pricing-card reveal-delay-1">
+					<div class="pricing-icon" style="color: var(--orange)">
+						<i class="fi fi-rr-calculator"></i>
+					</div>
+					<h3>Project-Based Pricing</h3>
+					<p>
+						Clear scope, clear cost. We deliver what we promise within an agreed budget. 
+						No surprises, no hourly surprise bills.
+					</p>
+				</div>
+
+				<div class="pricing-card reveal-delay-2">
+					<div class="pricing-icon" style="color: var(--teal)">
+						<i class="fi fi-rr-handshake"></i>
+					</div>
+					<h3>Transparent Process</h3>
+					<p>
+						You know exactly what you're paying for and why. We break down estimates clearly 
+						and explain the investment in each phase.
+					</p>
+				</div>
+
+				<div class="pricing-card reveal-delay-3">
+					<div class="pricing-icon" style="color: var(--purple)">
+						<i class="fi fi-rr-chart-line-up"></i>
+					</div>
+					<h3>Flexible Models</h3>
+					<p>
+						Ongoing support plans, retainers, or one-time projects. We work with your budget 
+						and growth stage. Typically 25% deposit to start.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ===== CTA SECTION ===== -->
+	<section class="cta-section reveal">
+		<div class="container">
+			<h2>Ready to Transform Your Digital Presence?</h2>
+			<p>Let's discuss your goals and build a plan that gets results.</p>
+			<div class="cta-buttons">
+				<a href="contact.html" class="btn btn--accent">Start a Project</a>
+				<a href="about.html" class="btn btn--ghost">Learn Our Approach</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- ===== FOOTER ===== -->
+	<footer class="site-footer">
+		<div class="container">
+			<div class="footer-grid">
+				<!-- Brand Column -->
+				<div class="footer-brand">
+					<a href="index.html">
+						<img src="images/icons/logo-1300x507.png" alt="The Daly Creative" style="height: 44px; width: auto; margin-bottom: 1.25rem;" />
+					</a>
+					<p>
+						Web design, branding, and AI strategy for ambitious businesses.
+						Based in Fremantle, Western Australia.
+					</p>
+					<div class="footer-socials">
+						<a href="https://www.linkedin.com/in/thetimdaly/" target="_blank" rel="noopener noreferrer"
+							class="footer-social-link" aria-label="LinkedIn">
+							<i class="bi bi-linkedin"></i>
+						</a>
+						<a href="https://www.facebook.com/thedalycreative/" target="_blank" rel="noopener noreferrer"
+							class="footer-social-link" aria-label="Facebook">
+							<i class="bi bi-facebook"></i>
+						</a>
+						<a href="https://www.instagram.com/thedalycreative/" target="_blank" rel="noopener noreferrer"
+							class="footer-social-link" aria-label="Instagram">
+							<i class="bi bi-instagram"></i>
+						</a>
+					</div>
+				</div>
+
+				<!-- Services Column -->
+				<div>
+					<h4 class="footer-heading">Services</h4>
+					<ul class="footer-links">
+						<li><a href="services.html#web-dev">Web Development</a></li>
+						<li><a href="services.html#brand-identity">Brand Identity</a></li>
+						<li><a href="ai-tools.html">AI Tools</a></li>
+						<li><a href="services.html#seo">SEO & Growth</a></li>
+						<li><a href="services.html#training">Training</a></li>
+					</ul>
+				</div>
+
+				<!-- Company Column -->
+				<div>
+					<h4 class="footer-heading">Company</h4>
+					<ul class="footer-links">
+						<li><a href="about.html">About</a></li>
+						<li><a href="work.html">Work</a></li>
+						<li><a href="process.html">Process</a></li>
+						<li><a href="blog.html">Blog</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+
+				<!-- Get in Touch Column -->
+				<div>
+					<h4 class="footer-heading">Get in Touch</h4>
+					<ul class="footer-links">
+						<li>
+							<a href="mailto:contact@thetimdaly.com" class="footer-contact-item">
+								<i class="bi bi-envelope"></i> contact@thetimdaly.com
+							</a>
+						</li>
+						<li>
+							<span class="footer-contact-item">
+								<i class="bi bi-geo-alt"></i> Fremantle, WA
+							</span>
+						</li>
+					</ul>
+					<a href="contact.html" class="footer-cta">
+						Start a Project <i class="bi bi-arrow-right"></i>
+					</a>
+				</div>
+			</div>
+
+			<div class="footer-bottom">
+				<p class="footer-copyright">&copy; 2026 The Daly Creative. All rights reserved.</p>
+				<div class="footer-legal">
+					<a href="terms.html">Terms of Service</a>
+					<a href="privacy.html">Privacy Policy</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- ===== SCRIPTS ===== -->
+	<script>
+		// Navbar scroll
+		const nav = document.querySelector("nav");
+		const filterNav = document.querySelector(".filter-nav");
+		
+		window.addEventListener("scroll", () => {
+			const scrolled = window.scrollY > 40;
+			nav.classList.toggle("nav--scrolled", scrolled);
+			
+			// Adjust sticky top of filter nav to follow main nav height
+			if (filterNav) {
+				filterNav.style.top = scrolled ? "60px" : "80px";
+			}
+		}, { passive: true });
+
+		// Scroll reveal
+		const revealObserver = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("visible");
+					revealObserver.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.08, rootMargin: "0px 0px -60px 0px" });
+		document.querySelectorAll(".reveal, .reveal-scale, .reveal-left, .reveal-right").forEach(el => revealObserver.observe(el));
+
+		// Mobile nav close
+		document.querySelectorAll(".nav-links a").forEach(link => {
+			link.addEventListener("click", () => { document.getElementById("nav-toggle").checked = false; });
+		});
+
+		// Smooth anchor scroll
+		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+			anchor.addEventListener("click", function(e) {
+				const target = document.querySelector(this.getAttribute("href"));
+				if (target) { e.preventDefault(); target.scrollIntoView({ behavior: "smooth" }); }
+			});
+		});
+
+		// Filter navigation functionality
+		const filterBtns = document.querySelectorAll('.filter-btn');
+		const sections = document.querySelectorAll('.services-section');
+
+		filterBtns.forEach(btn => {
+			btn.addEventListener('click', function () {
+				const filter = this.getAttribute('data-filter');
+				filterBtns.forEach(b => b.classList.remove('active'));
+				this.classList.add('active');
+
+				if (filter === 'all') {
+					sections.forEach(s => s.style.display = 'block');
+				} else {
+					sections.forEach(s => {
+						s.style.display = s.getAttribute('data-category') === filter ? 'block' : 'none';
+					});
+				}
+				// Optional: scroll to grid top when filtering
+				document.querySelector('.services-grid-wrapper').scrollIntoView({ behavior: 'smooth' });
+			});
+		});
+
+		// Magnetic button effect
+		if (window.matchMedia("(min-width: 768px) and (hover: hover)").matches) {
+			document.querySelectorAll(".btn--accent, .nav-cta, .footer-cta").forEach(btn => {
+				btn.addEventListener("mousemove", function(e) {
+					const rect = this.getBoundingClientRect();
+					const x = e.clientX - rect.left - rect.width / 2;
+					const y = e.clientY - rect.top - rect.height / 2;
+					this.style.transform = `translateY(-3px) translate(${x * 0.12}px, ${y * 0.12}px)`;
+				});
+				btn.addEventListener("mouseleave", function() {
+					this.style.transform = "";
+				});
+			});
+		}
+	</script>
+</body>
+
+</html>

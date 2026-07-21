@@ -1,766 +1,283 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>The Daly Creative | Web Design, Branding & AI Strategy — Perth, WA</title>
-	<meta name="description"
-		content="Premium web design, branding, and AI-powered digital strategy for ambitious businesses. Based in Fremantle, serving brands that want to stand out and convert." />
-	<meta name="keywords"
-		content="web design Perth, branding Fremantle, AI automation, digital strategy, web development Western Australia" />
-	<link rel="icon" type="image/png" href="images/icons/icon-x256.png" />
-
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-	<link rel="stylesheet"
-		href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css" />
-	<link rel="stylesheet"
-		href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css" />
-
-	<link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Daly Creative | Web Design, Branding & AI Strategy — Fremantle, WA</title>
+<meta name="description" content="Design, development and AI-powered systems for Perth businesses. Websites, brand identity, practical AI, cyber security and training — from one strategic partner in Fremantle.">
+<link rel="icon" href="/assets/img/brand/icon-256.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/styles.css">
 </head>
-
 <body>
-	<!-- ===== NAVIGATION ===== -->
-	<nav>
-		<div class="nav-container">
-			<a href="index.html" class="logo">
-				<img src="images/icons/logo-1300x507.png" alt="The Daly Creative" height="42" />
-			</a>
+<a class="skip-link" href="#main">Skip to content</a>
 
-			<input type="checkbox" id="nav-toggle" class="nav-toggle" />
-			<label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
-				<span></span><span></span><span></span>
-			</label>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">tdc<span class="stop">.</span><span class="visually-hidden"> — The Daly Creative, home</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/work">Work</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a class="btn btn-primary btn-sm" href="/contact">Let's talk</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-			<ul class="nav-links">
-				<li data-color="orange">
-					<a href="index.html" class="active">Home</a>
-				</li>
-				<li class="nav-has-dropdown" data-color="teal">
-					<a href="services.html">
-						Services <i class="bi bi-chevron-down nav-chevron"></i>
-					</a>
-					<div class="nav-dropdown">
-						<div class="nav-dropdown-grid">
-							<a href="services.html#web-dev" class="nav-dropdown-card">
-								<i class="fi fi-rr-browser nav-dropdown-icon"></i>
-								<div><strong>Web Development</strong><span>Fast, beautiful, conversion-ready sites</span></div>
-							</a>
-							<a href="services.html#brand-identity" class="nav-dropdown-card">
-								<i class="fi fi-rr-palette nav-dropdown-icon"></i>
-								<div><strong>Brand Identity</strong><span>Logos, guidelines, visual systems</span></div>
-							</a>
-							<a href="services.html#seo" class="nav-dropdown-card">
-								<i class="fi fi-rr-chart-line-up nav-dropdown-icon"></i>
-								<div><strong>SEO & Growth</strong><span>Get found, get leads, grow</span></div>
-							</a>
-							<a href="services.html#ai-strategy" class="nav-dropdown-card">
-								<i class="fi fi-rr-brain nav-dropdown-icon"></i>
-								<div><strong>AI Strategy</strong><span>Smart automation for real workflows</span></div>
-							</a>
-							<div class="nav-dropdown-divider"></div>
-							<a href="ai-tools.html" class="nav-dropdown-card nav-dropdown-card--dark">
-								<i class="fi fi-rr-robot nav-dropdown-icon"></i>
-								<div><strong>AI Tools & Automation</strong><span>Custom agents, chatbots, workflow systems</span></div>
-							</a>
-							<a href="cyber-security.html" class="nav-dropdown-card nav-dropdown-card--maroon">
-								<i class="fi fi-rr-shield-check nav-dropdown-icon"></i>
-								<div><strong>Cyber Security</strong><span>Protection, audits, and compliance</span></div>
-							</a>
-						</div>
-					</div>
-				</li>
-				<li data-color="purple"><a href="work.html">Work</a></li>
-				<li class="nav-has-dropdown" data-color="amber">
-					<a href="process.html">
-						Process <i class="bi bi-chevron-down nav-chevron"></i>
-					</a>
-					<div class="nav-dropdown">
-						<div class="nav-dropdown-grid">
-							<a href="process.html#discover" class="nav-dropdown-card">
-								<i class="fi fi-rr-search nav-dropdown-icon"></i>
-								<div><strong>01 Discover</strong><span>Research, goals, and strategy</span></div>
-							</a>
-							<a href="process.html#design" class="nav-dropdown-card">
-								<i class="fi fi-rr-interrogation nav-dropdown-icon"></i>
-								<div><strong>02 Design</strong><span>Wireframes, UI, and branding</span></div>
-							</a>
-							<a href="process.html#build" class="nav-dropdown-card">
-								<i class="fi fi-rr-code-simple nav-dropdown-icon"></i>
-								<div><strong>03 Build</strong><span>Development and optimization</span></div>
-							</a>
-							<a href="process.html#launch" class="nav-dropdown-card">
-								<i class="fi fi-rr-rocket-lunch nav-dropdown-icon"></i>
-								<div><strong>04 Launch</strong><span>Deployment and growth</span></div>
-							</a>
-						</div>
-					</div>
-				</li>
-				<li class="nav-has-dropdown" data-color="blue">
-					<a href="about.html">
-						About <i class="bi bi-chevron-down nav-chevron"></i>
-					</a>
-					<div class="nav-dropdown">
-						<div class="nav-dropdown-grid">
-							<a href="about.html#the-founder" class="nav-dropdown-card">
-								<i class="fi fi-rr-user nav-dropdown-icon"></i>
-								<div><strong>The Founder</strong><span>Meet Tim Daly</span></div>
-							</a>
-							<a href="about.html#values" class="nav-dropdown-card">
-								<i class="fi fi-rr-heart nav-dropdown-icon"></i>
-								<div><strong>Values</strong><span>What drives the creative work</span></div>
-							</a>
-						</div>
-					</div>
-				</li>
-				<li data-color="coral"><a href="blog.html">Blog</a></li>
-				<li><a href="contact.html" class="nav-cta">Start a Project <i class="bi bi-arrow-right nav-icon"></i></a></li>
-			</ul>
+<main id="main">
 
-			<div class="nav-overlay" onclick="document.getElementById('nav-toggle').checked = false"></div>
-		</div>
-	</nav>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-glow" style="background:var(--marigold); width:420px; height:420px; right:-80px; top:-120px;" aria-hidden="true"></div>
+    <div class="hero-glow" style="background:var(--cerise); width:360px; height:360px; right:280px; bottom:-160px;" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <p class="kicker">Web design &amp; AI strategy · Fremantle, WA</p>
+        <h1>Websites that <span class="accent-a">work</span> <span class="accent-b">harder</span> than your last one<span class="stop">.</span></h1>
+        <p class="lede">Design, development and AI-powered systems for businesses that want a digital presence worth paying attention to. Strategic, sharp, built to convert.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="/contact">Start your project</a>
+          <a class="btn btn-secondary" href="/work">See the work</a>
+        </div>
+      </div>
+      <div class="op-art hero-art" aria-hidden="true">
+        <span class="op op-circle" style="background:var(--marigold); width:220px; height:220px; left:8%; top:6%;"></span>
+        <span class="op op-circle" style="background:var(--lilac); width:220px; height:220px; left:38%; top:14%;"></span>
+        <span class="op op-bubble-r" style="background:var(--cerise); width:180px; height:120px; left:14%; top:58%;"></span>
+        <span class="op op-bubble-l" style="background:var(--teal); width:130px; height:96px; left:62%; top:64%;"></span>
+        <span class="op op-punct" style="font-size:230px; right:0; top:-12px;">&rdquo;</span>
+      </div>
+    </div>
+  </section>
 
-	<!-- ===== HERO ===== -->
-	<section class="hero">
-		<!-- Animated gradient orbs -->
-		<div class="hero-orb hero-orb--orange" aria-hidden="true"></div>
-		<div class="hero-orb hero-orb--teal" aria-hidden="true"></div>
-		<div class="hero-orb hero-orb--purple" aria-hidden="true"></div>
+  <!-- Pillars -->
+  <section class="section" aria-labelledby="pillars-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">What I do</p>
+        <h2 id="pillars-title">Design, build and automate — so your business actually grows.</h2>
+        <p>Every service is built around one thing: making your digital presence generate real results. No fluff, no filler — just smart strategy and sharp execution.</p>
+      </div>
+      <div class="grid-4">
+        <article class="card pillar pillar-brand reveal">
+          <span class="icon-cluster" aria-hidden="true"><i style="background:var(--marigold); left:0;"></i><i style="background:var(--lilac); left:18px;"></i></span>
+          <h3>Web &amp; Brand</h3>
+          <p>Custom websites and identities with strategy behind every pixel — plus the SEO and campaigns that get them found.</p>
+          <a class="card-link" href="/services">Explore<span class="visually-hidden"> Web and Brand services</span> &rarr;</a>
+        </article>
+        <article class="card pillar pillar-ai reveal">
+          <span class="icon-cluster" aria-hidden="true"><i style="background:var(--ai-yellow); left:0;"></i><i style="background:#9DB4FF; left:18px;"></i></span>
+          <h3>AI &amp; Automation</h3>
+          <p>Practical AI: agents, chatbots and workflow automation that hand you back real hours every week.</p>
+          <a class="card-link" href="/services#ai">Explore<span class="visually-hidden"> AI and Automation services</span> &rarr;</a>
+        </article>
+        <article class="card pillar pillar-cyber reveal">
+          <span class="icon-cluster" aria-hidden="true"><i style="background:var(--cy-plum-mid); left:0;"></i><i style="background:var(--cerise); left:18px;"></i></span>
+          <h3>Cyber Security</h3>
+          <p>Audits, training and monitoring in plain English — so one bad Tuesday never becomes a bad year.</p>
+          <a class="card-link" href="/services#security">Explore<span class="visually-hidden"> Cyber Security services</span> &rarr;</a>
+        </article>
+        <article class="card pillar pillar-train reveal">
+          <span class="icon-cluster" aria-hidden="true"><i style="background:#8FD4BC; left:0;"></i><i style="background:#9DBEE8; left:18px;"></i></span>
+          <h3>Training &amp; Coaching</h3>
+          <p>Workshops, support plans and future-proofing — so your team runs the tools without depending on anyone.</p>
+          <a class="card-link" href="/services#training">Explore<span class="visually-hidden"> Training and Coaching services</span> &rarr;</a>
+        </article>
+      </div>
+    </div>
+  </section>
 
-		<!-- Grid overlay -->
-		<div class="hero-grid-overlay" aria-hidden="true"></div>
+  <!-- Featured work -->
+  <section class="section" aria-labelledby="work-title" style="background:#fff;">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Selected work</p>
+        <h2 id="work-title">Real projects. Real outcomes.</h2>
+        <p>Every project starts with a business problem and ends with a solution that looks, feels and performs better than what came before.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card project-card reveal">
+          <img src="/assets/img/portfolio/skywings.png" alt="SkyWings Aviation website homepage" loading="lazy">
+          <div class="project-body">
+            <h3>SkyWings Aviation</h3>
+            <p>Complete rebrand and website build for an aviation training company — from scattered identity to sharp, professional presence.</p>
+            <div class="tag-row"><span class="tag">Web design</span><span class="tag">Branding</span></div>
+          </div>
+        </article>
+        <article class="card project-card reveal">
+          <img src="/assets/img/portfolio/preservation-framers.png" alt="Preservation Framers website homepage" loading="lazy">
+          <div class="project-body">
+            <h3>Preservation Framers</h3>
+            <p>A bespoke framing business needed a site that reflected their craftsmanship — clean, elegant, built for local enquiries.</p>
+            <div class="tag-row"><span class="tag">Web design</span><span class="tag">Local SEO</span></div>
+          </div>
+        </article>
+        <article class="card project-card reveal">
+          <img src="/assets/img/portfolio/drumplings.png" alt="Drumplings website homepage" loading="lazy">
+          <div class="project-body">
+            <h3>Drumplings</h3>
+            <p>Food brand meets bold design — a vibrant site for a hospitality brand that needed personality and a strong ordering flow.</p>
+            <div class="tag-row"><span class="tag">Web design</span><span class="tag">Brand identity</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="btn-row" style="margin-top:28px;">
+        <a class="btn btn-secondary" href="/work">View all projects</a>
+      </div>
+    </div>
+  </section>
 
-		<div class="container">
-			<div class="hero-content">
-				<div class="hero-badge">
-					<span class="dot"></span>
-					Web Design & AI Strategy — Fremantle, WA
-				</div>
+  <!-- Process teaser -->
+  <section class="section" aria-labelledby="process-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">How it works</p>
+        <h2 id="process-title">From first conversation to finished product.</h2>
+        <p>A clear, collaborative process that keeps you in the loop at every stage. No surprises, no scope creep — just smart work, delivered well.</p>
+      </div>
+      <div class="grid-4">
+        <div class="card reveal"><span class="step-num" aria-hidden="true">01</span><h3>Discover</h3><p>We talk about your business, your goals and your audience — and define what we're building and why.</p></div>
+        <div class="card reveal"><span class="step-num" aria-hidden="true">02</span><h3>Design</h3><p>Strategy becomes visual: wireframes, mockups and brand direction, refined with your feedback.</p></div>
+        <div class="card reveal"><span class="step-num" aria-hidden="true">03</span><h3>Build</h3><p>Clean code, responsive layouts, optimised performance — hand-crafted, tested and polished.</p></div>
+        <div class="card reveal"><span class="step-num" aria-hidden="true">04</span><h3>Launch &amp; grow</h3><p>We go live, monitor and iterate. I don't disappear after launch — your site keeps evolving.</p></div>
+      </div>
+      <div class="btn-row" style="margin-top:28px;">
+        <a class="btn btn-secondary" href="/services#process">See the full process</a>
+      </div>
+    </div>
+  </section>
 
-				<h1>Websites that <span class="accent">work harder</span> than your last one.</h1>
+  <!-- About teaser -->
+  <section class="section" aria-labelledby="about-title" style="background:#fff;">
+    <div class="wrap" style="display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:clamp(24px,5vw,64px); align-items:center;" data-stack>
+      <img src="/assets/img/people/tim-daly.png" alt="Tim Daly, founder of The Daly Creative" style="border-radius:38% 62% 55% 45% / 45% 48% 52% 55%; box-shadow:var(--shadow-soft);" loading="lazy">
+      <div>
+        <p class="kicker">Not another generic freelancer</p>
+        <h2 id="about-title">One person. Full stack. Actually invested.</h2>
+        <p style="color:var(--ink-soft); margin-top:12px;">You get one person who understands design, code, strategy and AI — with a background in high-stakes environments like the Supreme Court of WA, where reliability isn't optional. I take on a handful of clients at a time and give each one real attention.</p>
+        <div class="btn-row" style="margin-top:24px;">
+          <a class="btn btn-secondary" href="/about">More about TDC</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-				<p class="hero-sub">
-					Design, development, and AI-powered systems for businesses that want a digital
-					presence worth paying attention to. Strategic, beautiful, built to convert.
-				</p>
+  <!-- Testimonials -->
+  <section class="section" aria-labelledby="quotes-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">What people say</p>
+        <h2 id="quotes-title">Trust is earned, not claimed.</h2>
+      </div>
+      <div class="grid-3">
+        <figure class="card quote-card reveal">
+          <blockquote><p>Tim completely transformed how we present ourselves online. The site looks incredible and we started getting enquiries within the first week.</p></blockquote>
+          <figcaption>James K. <span>Director, SkyWings Aviation</span></figcaption>
+        </figure>
+        <figure class="card quote-card reveal">
+          <blockquote><p>What sets Tim apart is he actually understands the business side. He doesn't just make things look good — he makes them work.</p></blockquote>
+          <figcaption>Sarah M. <span>Founder, Preservation Framers</span></figcaption>
+        </figure>
+        <figure class="card quote-card reveal">
+          <blockquote><p>The AI automation Tim built has saved us hours every week. It's not about tech for tech's sake — it's genuinely useful.</p></blockquote>
+          <figcaption>Daniel R. <span>Operations Manager</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-				<div class="hero-actions">
-					<a href="contact.html" class="btn btn--accent btn--lg">
-						Start Your Project
-						<i class="bi bi-arrow-right"></i>
-					</a>
-					<a href="work.html" class="btn btn--light btn--lg">
-						See the Work
-					</a>
-				</div>
+  <!-- Blog teaser -->
+  <section class="section" aria-labelledby="blog-title" style="background:#fff;">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">From the journal</p>
+        <h2 id="blog-title">Plain-English notes for business owners.</h2>
+      </div>
+      <div class="grid-2">
+        <article class="card reveal">
+          <span class="post-tag">Web strategy</span>
+          <h3 style="margin-top:12px;"><a href="/blog/strategic-logic-beats-pretty-pixels" style="text-decoration:none; color:inherit;">Strategic logic beats pretty pixels every time.</a></h3>
+          <p>Most "bad" websites aren't ugly — they're decisions made in the wrong order. Design before strategy, features before goals.</p>
+        </article>
+        <article class="card reveal">
+          <span class="post-tag">AI strategy</span>
+          <h3 style="margin-top:12px;"><a href="/blog/practical-ai-small-business" style="text-decoration:none; color:inherit;">Practical AI for small business: where to start.</a></h3>
+          <p>You don't need a "transformation strategy" — you need three small workflows worth automating. Here's a sensible map.</p>
+        </article>
+      </div>
+      <div class="btn-row" style="margin-top:28px;">
+        <a class="btn btn-secondary" href="/blog">All articles</a>
+      </div>
+    </div>
+  </section>
 
-				<div class="hero-proof">
-					<div class="hero-stat">
-						<div class="hero-stat-number" data-count="6">0</div>
-						<div class="hero-stat-label">Client brands built</div>
-					</div>
-					<div class="hero-stat">
-						<div class="hero-stat-number" data-count="12">0</div>
-						<div class="hero-stat-label">Services offered</div>
-					</div>
-					<div class="hero-stat">
-						<div class="hero-stat-number" data-count="100" data-suffix="%">0</div>
-						<div class="hero-stat-label">Tailored to your business</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+  <!-- CTA band -->
+  <section class="section cta-band" aria-labelledby="cta-title">
+    <span class="op op-circle" style="background:var(--cy-plum-mid); width:260px; height:260px; right:-60px; top:-80px;" aria-hidden="true"></span>
+    <span class="op op-bubble-l" style="background:var(--cerise); width:190px; height:130px; right:180px; bottom:-40px;" aria-hidden="true"></span>
+    <div class="wrap">
+      <h2 id="cta-title">Let's build something your business deserves.</h2>
+      <p>Whether you need a new website, a brand refresh or smarter systems — let's talk about what would make the biggest difference right now.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/contact">Start your project</a>
+        <a class="btn btn-secondary" style="color:#fff; box-shadow:inset 0 0 0 2px #fff;" href="/services">Explore services</a>
+      </div>
+    </div>
+  </section>
 
-	<!-- ===== SERVICES OVERVIEW ===== -->
-	<section class="services-section" id="services">
-		<div class="container">
-			<div class="section-header reveal">
-				<span class="section-label">What I Do</span>
-				<h2>Design, build, and automate — so your business <em>actually</em> grows.</h2>
-				<p>
-					Every service is built around one thing: making your digital presence generate real results.
-					No fluff. No filler. Just smart strategy and sharp execution.
-				</p>
-			</div>
+</main>
 
-			<div class="services-grid">
-				<div class="service-card reveal reveal-delay-1">
-					<div class="service-icon" style="background: var(--orange-light);">
-						<i class="fi fi-rr-browser" style="color: var(--orange);"></i>
-					</div>
-					<h3>Web Design & Development</h3>
-					<p>
-						Custom websites built for speed, clarity, and conversion.
-						No templates. No page builders. Just clean code and thoughtful design
-						that makes your business look as good as it is.
-					</p>
-					<a href="services.html#web-dev" class="learn-more">
-						Learn more <i class="bi bi-arrow-right"></i>
-					</a>
-				</div>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="/">tdc<span class="stop">.</span><span class="visually-hidden"> — The Daly Creative, home</span></a>
+        <p class="footer-blurb">Web design, branding and AI strategy for ambitious businesses. Based in Fremantle, Western Australia.</p>
+        <div class="footer-dots" aria-hidden="true">
+          <i style="background:var(--marigold);"></i><i style="background:var(--orange);"></i><i style="background:var(--cerise);"></i><i style="background:var(--purple-mid);"></i><i style="background:var(--teal);"></i>
+        </div>
+      </div>
+      <nav aria-label="Footer — pages">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/work">Work</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer — services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services">Web &amp; Brand</a></li>
+          <li><a href="/services#ai">AI &amp; Automation</a></li>
+          <li><a href="/services#security">Cyber Security</a></li>
+          <li><a href="/services#training">Training</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="mailto:contact@thedalycreative.com">contact@thedalycreative.com</a></li>
+          <li>Fremantle / Perth, WA</li>
+          <li><a class="btn btn-primary btn-sm" style="margin-top:8px;" href="/contact">Start a project</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© <span data-year>2026</span> The Daly Creative. All rights reserved.</span>
+      <span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </div>
+  </div>
+</footer>
 
-				<div class="service-card reveal reveal-delay-2">
-					<div class="service-icon" style="background: rgba(245, 158, 11, 0.07);">
-						<i class="fi fi-rr-palette" style="color: var(--amber);"></i>
-					</div>
-					<h3>Branding & Identity</h3>
-					<p>
-						Logos, colour systems, typography, brand guidelines — the visual
-						foundation that makes your business feel credible, cohesive, and
-						impossible to ignore.
-					</p>
-					<a href="services.html#brand-identity" class="learn-more">
-						Learn more <i class="bi bi-arrow-right"></i>
-					</a>
-				</div>
-
-				<div class="service-card reveal reveal-delay-3">
-					<div class="service-icon" style="background: var(--purple-light);">
-						<i class="fi fi-rr-brain" style="color: var(--purple);"></i>
-					</div>
-					<h3>AI Tools & Automation</h3>
-					<p>
-						Custom AI agents, workflow automation, smart chatbots, and content
-						systems. Real tools that save you time and make your operations
-						sharper — not just buzzwords.
-					</p>
-					<a href="ai-tools.html" class="learn-more">
-						Learn more <i class="bi bi-arrow-right"></i>
-					</a>
-				</div>
-
-				<div class="service-card reveal reveal-delay-4">
-					<div class="service-icon" style="background: var(--teal-light);">
-						<i class="fi fi-rr-chart-line-up" style="color: var(--teal);"></i>
-					</div>
-					<h3>SEO & Lead Generation</h3>
-					<p>
-						Local SEO, managed ad campaigns, and conversion-focused strategy
-						so your site doesn't just look good — it actually gets found and
-						brings in enquiries.
-					</p>
-					<a href="services.html#seo" class="learn-more">
-						Learn more <i class="bi bi-arrow-right"></i>
-					</a>
-				</div>
-
-				<div class="service-card reveal reveal-delay-5">
-					<div class="service-icon" style="background: rgba(59, 130, 246, 0.07);">
-						<i class="fi fi-rr-rocket-lunch" style="color: var(--blue);"></i>
-					</div>
-					<h3>Growth & Support Plans</h3>
-					<p>
-						Ongoing site maintenance, analytics, content updates, and strategic
-						guidance. A long-term partner who keeps your digital presence
-						evolving as your business does.
-					</p>
-					<a href="services.html#growth" class="learn-more">
-						Learn more <i class="bi bi-arrow-right"></i>
-					</a>
-				</div>
-
-				<div class="service-card reveal reveal-delay-6">
-					<div class="service-icon" style="background: rgba(244, 63, 94, 0.07);">
-						<i class="fi fi-rr-graduation-cap" style="color: var(--coral);"></i>
-					</div>
-					<h3>Training & Empowerment</h3>
-					<p>
-						Workshops and hands-on training so your team can manage your site,
-						use AI tools confidently, and keep your digital systems running
-						without depending on anyone else.
-					</p>
-					<a href="services.html#training" class="learn-more">
-						Learn more <i class="bi bi-arrow-right"></i>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- ===== SELECTED WORK ===== -->
-	<section class="work-section" id="work">
-		<div class="container">
-			<div class="section-header reveal">
-				<span class="section-label">Selected Work</span>
-				<h2>Real projects. <em>Real outcomes.</em></h2>
-				<p>
-					Every project starts with a business problem and ends with a solution
-					that looks, feels, and performs better than what came before.
-				</p>
-			</div>
-
-			<div class="work-grid">
-				<div class="work-card reveal reveal-delay-1">
-					<div class="work-card-image">
-						<img src="images/websites/skywings-website.png"
-							alt="SkyWings Aviation website redesign" loading="lazy" />
-					</div>
-					<div class="work-card-body">
-						<span class="work-card-tag">Web Design + Branding</span>
-						<h3>SkyWings Aviation</h3>
-						<p>Complete rebrand and website build for an aviation training company — from scattered identity to sharp, professional digital presence.</p>
-					</div>
-				</div>
-
-				<div class="work-card reveal reveal-delay-2">
-					<div class="work-card-image">
-						<img src="images/websites/preservationframers-website.png"
-							alt="Preservation Framers website" loading="lazy" />
-					</div>
-					<div class="work-card-body">
-						<span class="work-card-tag">Web Design + SEO</span>
-						<h3>Preservation Framers</h3>
-						<p>A bespoke framing business needed a site that reflected their craftsmanship. Clean, elegant, built to generate local enquiries.</p>
-					</div>
-				</div>
-
-				<div class="work-card reveal reveal-delay-3">
-					<div class="work-card-image">
-						<img src="images/websites/drumplings-website.png"
-							alt="Drumplings website" loading="lazy" />
-					</div>
-					<div class="work-card-body">
-						<span class="work-card-tag">Web Design + Brand Identity</span>
-						<h3>Drumplings</h3>
-						<p>Food brand meets bold design. A vibrant website for a hospitality brand that needed personality, clarity, and a strong online ordering flow.</p>
-					</div>
-				</div>
-
-				<div class="work-card reveal reveal-delay-4">
-					<div class="work-card-image">
-						<img src="images/websites/dorahealth-website.png"
-							alt="Dora Health website" loading="lazy" />
-					</div>
-					<div class="work-card-body">
-						<span class="work-card-tag">Web Design + UX</span>
-						<h3>Dora Health</h3>
-						<p>Health-tech platform design focused on trust, clarity, and accessibility. Making complex health services feel approachable and credible.</p>
-					</div>
-				</div>
-			</div>
-
-			<div style="text-align: center; margin-top: 3.5rem;" class="reveal">
-				<a href="work.html" class="btn btn--ghost">
-					View All Projects <i class="bi bi-arrow-right"></i>
-				</a>
-			</div>
-		</div>
-	</section>
-
-	<!-- ===== WHY WORK WITH ME ===== -->
-	<section class="why-section" id="why">
-		<div class="container">
-			<div class="section-header text-center reveal">
-				<span class="section-label" style="justify-content: center;">Why The Daly Creative</span>
-				<h2>Not another generic freelancer.</h2>
-				<p>
-					You get one person who understands design, code, strategy, and AI —
-					not a revolving door of juniors or a faceless agency.
-				</p>
-			</div>
-
-			<div class="why-grid">
-				<div class="why-item reveal reveal-delay-1">
-					<div class="why-icon"><i class="fi fi-rr-lightbulb-on"></i></div>
-					<h3>Strategic, not just visual</h3>
-					<p>Every design decision is tied to a business goal. You get something that looks premium and actually drives leads, trust, and revenue.</p>
-				</div>
-
-				<div class="why-item reveal reveal-delay-2">
-					<div class="why-icon"><i class="fi fi-rr-code-simple"></i></div>
-					<h3>One person, full stack</h3>
-					<p>Design, development, branding, AI, strategy — handled by someone who sees the full picture. No handoff gaps. No communication breakdowns.</p>
-				</div>
-
-				<div class="why-item reveal reveal-delay-3">
-					<div class="why-icon"><i class="fi fi-rr-robot"></i></div>
-					<h3>AI-forward thinking</h3>
-					<p>I use AI as a real tool — not a gimmick. From workflow automation to smart content systems, your business gets practical efficiency gains.</p>
-				</div>
-
-				<div class="why-item reveal reveal-delay-4">
-					<div class="why-icon"><i class="fi fi-rr-comment-alt-check"></i></div>
-					<h3>Straight talk, no jargon</h3>
-					<p>You'll always know what's happening, why, and what it costs. I explain things clearly and make decisions that respect your budget and timeline.</p>
-				</div>
-
-				<div class="why-item reveal reveal-delay-5">
-					<div class="why-icon"><i class="fi fi-rr-bullseye-arrow"></i></div>
-					<h3>Conversion-focused</h3>
-					<p>Your website isn't art — it's a business tool. Every page, every section, every CTA is designed to turn visitors into enquiries and clients.</p>
-				</div>
-
-				<div class="why-item reveal reveal-delay-6">
-					<div class="why-icon"><i class="fi fi-rr-heart"></i></div>
-					<h3>Invested in your success</h3>
-					<p>I don't take on 50 clients at once. I take on a handful and give each one real attention. Your success is my reputation.</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- ===== PROCESS PREVIEW ===== -->
-	<section style="background: var(--sand);">
-		<div class="container">
-			<div class="section-header text-center reveal">
-				<span class="section-label" style="justify-content: center;">How It Works</span>
-				<h2>From first conversation to <em>finished product.</em></h2>
-				<p>
-					A clear, collaborative process that keeps you in the loop at every stage.
-					No surprises. No scope creep. Just smart work, delivered well.
-				</p>
-			</div>
-
-			<div class="process-grid">
-				<div class="process-step reveal reveal-delay-1">
-					<div class="process-number">01</div>
-					<h3>Discover</h3>
-					<p>We talk about your business, your goals, your audience. I learn what matters and define what we're building and why.</p>
-				</div>
-				<div class="process-step reveal reveal-delay-2">
-					<div class="process-number">02</div>
-					<h3>Design</h3>
-					<p>Strategy becomes visual. Wireframes, mockups, brand direction — all refined with your feedback before anything gets built.</p>
-				</div>
-				<div class="process-step reveal reveal-delay-3">
-					<div class="process-number">03</div>
-					<h3>Build</h3>
-					<p>Clean code, responsive layouts, optimised performance. Everything is hand-crafted, tested, and polished to a high standard.</p>
-				</div>
-				<div class="process-step reveal reveal-delay-4">
-					<div class="process-number">04</div>
-					<h3>Launch & Grow</h3>
-					<p>We go live, monitor performance, and iterate. I don't disappear after launch — I help your digital presence keep evolving.</p>
-				</div>
-			</div>
-
-			<div style="text-align: center; margin-top: 3.5rem;" class="reveal">
-				<a href="process.html" class="btn btn--ghost">
-					See the Full Process <i class="bi bi-arrow-right"></i>
-				</a>
-			</div>
-		</div>
-	</section>
-
-	<!-- ===== AI & AUTOMATION FEATURE ===== -->
-	<section class="ai-tools-section" id="ai">
-		<div class="container">
-			<div class="ai-tools-feature reveal-scale">
-				<div class="ai-feature-content">
-					<div class="ai-feature-text">
-						<span class="section-label" style="color: var(--purple);">AI-Powered</span>
-						<h2>Smarter systems for businesses that don't want to <em>waste time.</em></h2>
-						<p>
-							AI isn't just a trend — it's a competitive advantage. I build practical tools
-							that automate repetitive work, surface better insights, and free you up to
-							focus on what actually grows your business.
-						</p>
-						<ul class="ai-feature-list">
-							<li>Custom AI agents tailored to your workflows</li>
-							<li>Automated content, reporting, and data systems</li>
-							<li>Smart chatbots that handle real customer queries</li>
-							<li>Strategy consulting for teams adopting AI</li>
-						</ul>
-						<a href="ai-tools.html" class="btn btn--accent">
-							Explore AI Services <i class="bi bi-arrow-right"></i>
-						</a>
-					</div>
-					<div class="ai-feature-visual">
-						<img src="images/hero-images/hero-ai.png" alt="AI-powered automation tools"
-							loading="lazy" />
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- ===== TESTIMONIALS ===== -->
-	<section class="testimonials-section">
-		<div class="container">
-			<div class="section-header text-center reveal">
-				<span class="section-label" style="color: rgba(255,255,255,0.4); justify-content: center;">What People Say</span>
-				<h2>Trust is earned, <em>not claimed.</em></h2>
-				<p>
-					Real feedback from real clients. The kind of relationships
-					where people come back and refer others.
-				</p>
-			</div>
-
-			<div class="testimonial-carousel">
-				<div class="carousel-viewport">
-					<div class="carousel-track">
-						<div class="testimonial-tile">
-							<p class="testimonial-quote">
-								"Tim completely transformed how we present ourselves online. The site looks incredible and we started getting enquiries within the first week."
-							</p>
-							<div class="testimonial-source">James K.<span>Director, SkyWings Aviation</span></div>
-						</div>
-						<div class="testimonial-tile">
-							<p class="testimonial-quote">
-								"What sets Tim apart is he actually understands the business side. He doesn't just make things look good — he makes them work."
-							</p>
-							<div class="testimonial-source">Sarah M.<span>Founder, Preservation Framers</span></div>
-						</div>
-						<div class="testimonial-tile">
-							<p class="testimonial-quote">
-								"The AI automation Tim built has saved us hours every week. It's not about tech for tech's sake — it's genuinely useful."
-							</p>
-							<div class="testimonial-source">Daniel R.<span>Operations Manager</span></div>
-						</div>
-						<div class="testimonial-tile">
-							<p class="testimonial-quote">
-								"Clear communication, no surprises, and a result that exceeded expectations. Would recommend without hesitation."
-							</p>
-							<div class="testimonial-source">Michelle T.<span>Business Owner</span></div>
-						</div>
-						<div class="testimonial-tile">
-							<p class="testimonial-quote">
-								"Finally, someone who can explain tech in plain English and actually deliver on what they promise. A rare combination."
-							</p>
-							<div class="testimonial-source">Luke P.<span>Founder, Health Startup</span></div>
-						</div>
-						<div class="testimonial-tile">
-							<p class="testimonial-quote">
-								"Our brand went from inconsistent and dated to something we're genuinely proud of. The attention to detail was next level."
-							</p>
-							<div class="testimonial-source">Angela W.<span>Creative Director</span></div>
-						</div>
-						<!-- Duplicates for infinite scroll -->
-						<div class="testimonial-tile">
-							<p class="testimonial-quote">"Tim completely transformed how we present ourselves online. The site looks incredible and we started getting enquiries within the first week."</p>
-							<div class="testimonial-source">James K.<span>Director, SkyWings Aviation</span></div>
-						</div>
-						<div class="testimonial-tile">
-							<p class="testimonial-quote">"What sets Tim apart is he actually understands the business side. He doesn't just make things look good — he makes them work."</p>
-							<div class="testimonial-source">Sarah M.<span>Founder, Preservation Framers</span></div>
-						</div>
-						<div class="testimonial-tile">
-							<p class="testimonial-quote">"The AI automation Tim built has saved us hours every week. It's not about tech for tech's sake — it's genuinely useful."</p>
-							<div class="testimonial-source">Daniel R.<span>Operations Manager</span></div>
-						</div>
-						<div class="testimonial-tile">
-							<p class="testimonial-quote">"Clear communication, no surprises, and a result that exceeded expectations. Would recommend without hesitation."</p>
-							<div class="testimonial-source">Michelle T.<span>Business Owner</span></div>
-						</div>
-						<div class="testimonial-tile">
-							<p class="testimonial-quote">"Finally, someone who can explain tech in plain English and actually deliver on what they promise. A rare combination."</p>
-							<div class="testimonial-source">Luke P.<span>Founder, Health Startup</span></div>
-						</div>
-						<div class="testimonial-tile">
-							<p class="testimonial-quote">"Our brand went from inconsistent and dated to something we're genuinely proud of. The attention to detail was next level."</p>
-							<div class="testimonial-source">Angela W.<span>Creative Director</span></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- ===== FINAL CTA ===== -->
-	<section class="cta-section">
-		<div class="container" style="max-width: 720px; position: relative; z-index: 1;">
-			<div class="reveal">
-				<span class="section-label" style="color: var(--orange); justify-content: center;">Ready?</span>
-				<h2>Let's build something your business <em>deserves.</em></h2>
-				<p>
-					Whether you need a new website, a brand refresh, or smarter systems —
-					let's talk about what would make the biggest difference for your business right now.
-				</p>
-				<div class="btn-group">
-					<a href="contact.html" class="btn btn--accent btn--lg">
-						Start Your Project <i class="bi bi-arrow-right"></i>
-					</a>
-					<a href="services.html" class="btn btn--light btn--lg">
-						Explore Services
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- ===== FOOTER ===== -->
-	<footer class="site-footer">
-		<div class="container">
-			<div class="footer-grid">
-				<!-- Brand Column -->
-				<div class="footer-brand">
-					<a href="index.html">
-						<img src="images/icons/logo-1300x507.png" alt="The Daly Creative" style="height: 44px; width: auto; margin-bottom: 1.25rem;" />
-					</a>
-					<p>
-						Web design, branding, and AI strategy for ambitious businesses.
-						Based in Fremantle, Western Australia.
-					</p>
-					<div class="footer-socials">
-						<a href="https://www.linkedin.com/in/thetimdaly/" target="_blank" rel="noopener noreferrer"
-							class="footer-social-link" aria-label="LinkedIn">
-							<i class="bi bi-linkedin"></i>
-						</a>
-						<a href="https://www.facebook.com/thedalycreative/" target="_blank" rel="noopener noreferrer"
-							class="footer-social-link" aria-label="Facebook">
-							<i class="bi bi-facebook"></i>
-						</a>
-						<a href="https://www.instagram.com/thedalycreative/" target="_blank" rel="noopener noreferrer"
-							class="footer-social-link" aria-label="Instagram">
-							<i class="bi bi-instagram"></i>
-						</a>
-					</div>
-				</div>
-
-				<!-- Services Column -->
-				<div>
-					<h4 class="footer-heading">Services</h4>
-					<ul class="footer-links">
-						<li><a href="services.html#web-dev">Web Development</a></li>
-						<li><a href="services.html#brand-identity">Brand Identity</a></li>
-						<li><a href="ai-tools.html">AI Tools</a></li>
-						<li><a href="services.html#seo">SEO & Growth</a></li>
-						<li><a href="services.html#training">Training</a></li>
-					</ul>
-				</div>
-
-				<!-- Company Column -->
-				<div>
-					<h4 class="footer-heading">Company</h4>
-					<ul class="footer-links">
-						<li><a href="about.html">About</a></li>
-						<li><a href="work.html">Work</a></li>
-						<li><a href="process.html">Process</a></li>
-						<li><a href="blog.html">Blog</a></li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
-				</div>
-
-				<!-- Get in Touch Column -->
-				<div>
-					<h4 class="footer-heading">Get in Touch</h4>
-					<ul class="footer-links">
-						<li>
-							<a href="mailto:contact@thetimdaly.com" class="footer-contact-item">
-								<i class="bi bi-envelope"></i> contact@thetimdaly.com
-							</a>
-						</li>
-						<li>
-							<span class="footer-contact-item">
-								<i class="bi bi-geo-alt"></i> Fremantle, WA
-							</span>
-						</li>
-					</ul>
-					<a href="contact.html" class="footer-cta">
-						Start a Project <i class="bi bi-arrow-right"></i>
-					</a>
-				</div>
-			</div>
-
-			<div class="footer-bottom">
-				<p class="footer-copyright">&copy; 2026 The Daly Creative. All rights reserved.</p>
-				<div class="footer-legal">
-					<a href="terms.html">Terms of Service</a>
-					<a href="privacy.html">Privacy Policy</a>
-				</div>
-			</div>
-		</div>
-	</footer>
-
-	<!-- ===== SCRIPTS ===== -->
-	<script>
-		// Navbar scroll
-		const nav = document.querySelector("nav");
-		window.addEventListener("scroll", () => {
-			nav.classList.toggle("nav--scrolled", window.scrollY > 40);
-		}, { passive: true });
-
-		// Scroll reveal (unified observer for all reveal variants)
-		const revealObserver = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add("visible");
-					revealObserver.unobserve(entry.target);
-				}
-			});
-		}, { threshold: 0.08, rootMargin: "0px 0px -80px 0px" });
-
-		document.querySelectorAll(".reveal, .reveal-scale, .reveal-left, .reveal-right").forEach(el => revealObserver.observe(el));
-
-		// Mobile nav close
-		document.querySelectorAll(".nav-links a").forEach(link => {
-			link.addEventListener("click", () => { document.getElementById("nav-toggle").checked = false; });
-		});
-
-		// Smooth anchor scroll
-		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-			anchor.addEventListener("click", function(e) {
-				const target = document.querySelector(this.getAttribute("href"));
-				if (target) { e.preventDefault(); target.scrollIntoView({ behavior: "smooth" }); }
-			});
-		});
-
-		// Animated stat counters
-		function animateCounters() {
-			document.querySelectorAll("[data-count]").forEach(el => {
-				const target = parseInt(el.dataset.count);
-				const suffix = el.dataset.suffix || "+";
-				const duration = 1800;
-				const start = performance.now();
-
-				function step(now) {
-					const elapsed = now - start;
-					const progress = Math.min(elapsed / duration, 1);
-					const eased = 1 - Math.pow(1 - progress, 3);
-					const current = Math.round(eased * target);
-					el.textContent = current + (progress >= 1 ? suffix : "");
-					if (progress < 1) requestAnimationFrame(step);
-				}
-				requestAnimationFrame(step);
-			});
-		}
-
-		const proofObserver = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					animateCounters();
-					proofObserver.unobserve(entry.target);
-				}
-			});
-		}, { threshold: 0.5 });
-
-		const heroProof = document.querySelector(".hero-proof");
-		if (heroProof) proofObserver.observe(heroProof);
-
-		// Subtle parallax on hero orbs
-		const orbs = document.querySelectorAll(".hero-orb");
-		if (window.matchMedia("(min-width: 768px)").matches) {
-			document.addEventListener("mousemove", (e) => {
-				const x = (e.clientX / window.innerWidth - 0.5) * 2;
-				const y = (e.clientY / window.innerHeight - 0.5) * 2;
-				orbs.forEach((orb, i) => {
-					const speed = (i + 1) * 8;
-					orb.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
-				});
-			}, { passive: true });
-		}
-
-		// Magnetic button effect
-		if (window.matchMedia("(min-width: 768px) and (hover: hover)").matches) {
-			document.querySelectorAll(".btn--accent, .nav-cta, .footer-cta").forEach(btn => {
-				btn.addEventListener("mousemove", function(e) {
-					const rect = this.getBoundingClientRect();
-					const x = e.clientX - rect.left - rect.width / 2;
-					const y = e.clientY - rect.top - rect.height / 2;
-					this.style.transform = `translateY(-3px) translate(${x * 0.12}px, ${y * 0.12}px)`;
-				});
-				btn.addEventListener("mouseleave", function() {
-					this.style.transform = "";
-				});
-			});
-		}
-	</script>
+<script src="/assets/js/main.js" defer></script>
 </body>
-
 </html>
