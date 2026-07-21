@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TDC Revamp — Wireframes</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; background: #ECECEC; color: #262030; padding-bottom: 80px; }
+
+  .topbar {
+    position: sticky; top: 0; z-index: 50; background: #262030; color: #fff;
+    display: flex; align-items: center; justify-content: space-between; padding: 12px 26px;
+  }
+  .topbar strong { font-size: 15px; }
+  .topbar nav { display: flex; gap: 6px; flex-wrap: wrap; }
+  .topbar a { color: #fff; text-decoration: none; font-size: 12px; font-weight: 600; padding: 6px 12px; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; }
+  .topbar a:hover { background: #fff; color: #262030; }
+
+  .intro { max-width: 900px; margin: 34px auto 8px; padding: 0 26px; }
+  .intro h1 { font-size: 26px; margin-bottom: 8px; }
+  .intro p { font-size: 14px; line-height: 1.6; color: #555; }
+
+  .page { max-width: 900px; margin: 48px auto 0; padding: 0 26px; }
+  .page > h2 {
+    font-size: 19px; margin-bottom: 4px; display: flex; align-items: baseline; gap: 10px;
+  }
+  .page > h2 .url { font-size: 12px; font-weight: 500; color: #777; font-family: monospace; }
+  .page > p.note { font-size: 12.5px; color: #666; margin-bottom: 14px; }
+
+  .frame { background: #fff; border: 2px solid #262030; border-radius: 10px; overflow: hidden; }
+  .frame-bar { display: flex; gap: 5px; padding: 8px 12px; border-bottom: 2px solid #262030; }
+  .frame-bar i { width: 9px; height: 9px; border-radius: 50%; background: #C9C9C9; }
+  .frame-body { padding: 14px; display: grid; gap: 10px; }
+
+  .b {
+    border: 1.5px dashed #9A93A8; border-radius: 8px; background: #F6F5F8;
+    min-height: 54px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 10px 12px; gap: 3px;
+  }
+  .b strong { font-size: 12.5px; letter-spacing: .02em; }
+  .b span { font-size: 11px; color: #75708A; line-height: 1.45; max-width: 460px; }
+  .b.dark { background: #DDD9E6; border-style: solid; }
+  .b.tall { min-height: 120px; }
+  .b.xtall { min-height: 160px; }
+
+  .row { display: grid; gap: 10px; }
+  .r-7-5 { grid-template-columns: 7fr 5fr; }
+  .r-5-7 { grid-template-columns: 5fr 7fr; }
+  .r-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .r-4 { grid-template-columns: repeat(4, 1fr); }
+  .r-2 { grid-template-columns: 1fr 1fr; }
+  .r-1-2 { grid-template-columns: 1.4fr 1fr; }
+  .stack { display: grid; gap: 10px; }
+
+  .legend { max-width: 900px; margin: 20px auto 0; padding: 12px 26px; font-size: 12px; color: #666; }
+  @media (max-width: 700px) {
+    .row { grid-template-columns: 1fr !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <strong>TDC Revamp · Wireframes (lo-fi)</strong>
+  <nav>
+    <a href="#wf-home">Home</a><a href="#wf-services">Services</a><a href="#wf-work">Work</a>
+    <a href="#wf-about">About</a><a href="#wf-contact">Contact</a><a href="#wf-blog">Blog</a>
+  </nav>
+</header>
+
+<div class="intro">
+  <h1>Layout &amp; structure — all pages</h1>
+  <p>Grayscale on purpose: this locks <em>what goes where</em>, not how it looks. Grid: 12-col, max 1160px. All multi-column rows stack to one column ≤768px (text before imagery). Every page: skip-link → sticky header → <code>main</code> → CTA band → footer.</p>
+</div>
+
+<!-- ================= HOME ================= -->
+<section class="page" id="wf-home">
+  <h2>Home <span class="url">/</span></h2>
+  <p class="note">The only page with the full shape-composition hero. Sections alternate cream ↔ soft-glow backgrounds with wavy dividers.</p>
+  <div class="frame" role="img" aria-label="Home page wireframe">
+    <div class="frame-bar"><i></i><i></i><i></i></div>
+    <div class="frame-body">
+      <div class="b dark"><strong>Sticky header</strong><span>tdc. logo · Services · Work · About · Blog · [Let's talk] · mobile: hamburger → overlay</span></div>
+      <div class="row r-7-5">
+        <div class="b xtall"><strong>H1 hero</strong><span>"Websites that work harder than your last one." + sub (Perth mention) + [Start a project] [See our work]</span></div>
+        <div class="b xtall"><strong>Shape composition</strong><span>overlapping circles/bubbles + giant quote mark, faint glow behind (aria-hidden)</span></div>
+      </div>
+      <div class="row r-3">
+        <div class="b tall"><strong>Pillar: Web &amp; Brand</strong><span>SVG icon · blurb · link</span></div>
+        <div class="b tall"><strong>Pillar: AI &amp; Automation</strong><span>SVG icon · blurb · link</span></div>
+        <div class="b tall"><strong>Pillar: Security &amp; Support</strong><span>SVG icon · blurb · link</span></div>
+      </div>
+      <div class="row r-1-2">
+        <div class="b xtall"><strong>Featured project (large)</strong><span>screenshot + title + outcome line</span></div>
+        <div class="stack">
+          <div class="b tall"><strong>Project 2</strong></div>
+          <div class="b tall"><strong>Project 3</strong><span>+ "See all work →"</span></div>
+        </div>
+      </div>
+      <div class="row r-4">
+        <div class="b"><strong>1 Discover</strong></div>
+        <div class="b"><strong>2 Design</strong></div>
+        <div class="b"><strong>3 Build</strong></div>
+        <div class="b"><strong>4 Grow</strong><span>→ /services#process</span></div>
+      </div>
+      <div class="row r-5-7">
+        <div class="b tall"><strong>Photo</strong><span>blob clip-path frame</span></div>
+        <div class="b tall"><strong>About teaser</strong><span>2-sentence intro + "More about TDC →"</span></div>
+      </div>
+      <div class="row r-2">
+        <div class="b"><strong>Blog card</strong></div>
+        <div class="b"><strong>Blog card</strong><span>+ "All articles →"</span></div>
+      </div>
+      <div class="b dark"><strong>CTA band</strong><span>purple bg · "Let's make something bright" · [Start a project] (marigold, ink text)</span></div>
+      <div class="b dark"><strong>Footer</strong><span>brand+motif · Pages · Services · Contact/socials · legal row</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="page" id="wf-services">
+  <h2>Services <span class="url">/services</span></h2>
+  <p class="note">Absorbs old process.html (#process), cyber-security.html (#security), ai-tools.html (#ai). Anchor subnav is sticky below header.</p>
+  <div class="frame" role="img" aria-label="Services page wireframe">
+    <div class="frame-bar"><i></i><i></i><i></i></div>
+    <div class="frame-body">
+      <div class="b dark"><strong>Sticky header</strong></div>
+      <div class="b"><strong>Hero strip</strong><span>H1 "Everything your business needs to show up properly" + intro</span></div>
+      <div class="b dark"><strong>Anchor subnav (sticky)</strong><span>Web &amp; Brand · AI · Security · Process · Pricing</span></div>
+      <div class="row r-5-7">
+        <div class="b tall"><strong>Pillar icon art</strong></div>
+        <div class="b tall"><strong>Web &amp; Brand intro</strong><span>then 4 service card-rows: websites · brand · SEO · ads</span></div>
+      </div>
+      <div class="row r-5-7">
+        <div class="b tall"><strong>Pillar icon art</strong></div>
+        <div class="b tall"><strong>AI &amp; Automation intro (#ai)</strong><span>6 card-rows: strategy · workflow · content · chatbots · agents · data</span></div>
+      </div>
+      <div class="row r-5-7">
+        <div class="b tall"><strong>Pillar icon art</strong></div>
+        <div class="b tall"><strong>Security &amp; Support intro (#security)</strong><span>4 card-rows: cyber · support plan · training · future-proofing</span></div>
+      </div>
+      <div class="b tall"><strong>Process (#process)</strong><span>vertical numbered steps, condensed from process.html</span></div>
+      <div class="row r-3">
+        <div class="b"><strong>Project-based pricing</strong></div>
+        <div class="b"><strong>Transparent process</strong></div>
+        <div class="b"><strong>Flexible models</strong></div>
+      </div>
+      <div class="b dark"><strong>CTA band + footer</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WORK ================= -->
+<section class="page" id="wf-work">
+  <h2>Work <span class="url">/work</span></h2>
+  <div class="frame" role="img" aria-label="Work page wireframe">
+    <div class="frame-bar"><i></i><i></i><i></i></div>
+    <div class="frame-body">
+      <div class="b dark"><strong>Sticky header</strong></div>
+      <div class="b"><strong>Intro strip</strong><span>H1 + one-paragraph framing (outcomes, not deliverables)</span></div>
+      <div class="row r-2">
+        <div class="b xtall"><strong>Project card</strong><span>screenshot · title · outcome line · tag chips · visit link</span></div>
+        <div class="b xtall"><strong>Project card</strong></div>
+      </div>
+      <div class="row r-2">
+        <div class="b xtall"><strong>Project card</strong></div>
+        <div class="b xtall"><strong>Project card</strong></div>
+      </div>
+      <div class="b dark"><strong>CTA band + footer</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="page" id="wf-about">
+  <h2>About <span class="url">/about</span></h2>
+  <div class="frame" role="img" aria-label="About page wireframe">
+    <div class="frame-bar"><i></i><i></i><i></i></div>
+    <div class="frame-body">
+      <div class="b dark"><strong>Sticky header</strong></div>
+      <div class="row r-5-7">
+        <div class="b tall"><strong>Photo</strong><span>shape-framed</span></div>
+        <div class="b tall"><strong>H1 + intro</strong><span>who Tim is, why TDC exists</span></div>
+      </div>
+      <div class="b tall"><strong>Story</strong><span>prose, 68ch measure</span></div>
+      <div class="b xtall"><strong>CV timeline</strong><span>vertical line + dot markers (existing verified timeline)</span></div>
+      <div class="row r-3">
+        <div class="b"><strong>Value 1</strong></div>
+        <div class="b"><strong>Value 2</strong></div>
+        <div class="b"><strong>Value 3</strong><span>"What drives us" tinted cards</span></div>
+      </div>
+      <div class="b dark"><strong>CTA band + footer</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="page" id="wf-contact">
+  <h2>Contact <span class="url">/contact</span></h2>
+  <p class="note">No CTA band here — the page IS the CTA. Form success/error announced via role="status"; flip-loader on submit (disabled under reduced-motion).</p>
+  <div class="frame" role="img" aria-label="Contact page wireframe">
+    <div class="frame-bar"><i></i><i></i><i></i></div>
+    <div class="frame-body">
+      <div class="b dark"><strong>Sticky header</strong></div>
+      <div class="b"><strong>H1 + warm intro</strong></div>
+      <div class="row r-7-5">
+        <div class="b xtall"><strong>Form</strong><span>name · email · budget select · message · [Send] — labels above fields, errors via aria-describedby</span></div>
+        <div class="b xtall"><strong>Aside</strong><span>email · phone · socials · response-time note · mini motif</span></div>
+      </div>
+      <div class="b dark"><strong>Footer</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOG ================= -->
+<section class="page" id="wf-blog">
+  <h2>Blog <span class="url">/blog + post template</span></h2>
+  <div class="frame" role="img" aria-label="Blog index and post wireframe">
+    <div class="frame-bar"><i></i><i></i><i></i></div>
+    <div class="frame-body">
+      <div class="b dark"><strong>Sticky header</strong></div>
+      <div class="b"><strong>Index: H1 + intro</strong></div>
+      <div class="row r-2">
+        <div class="b tall"><strong>Post card</strong><span>title · date · excerpt · read time</span></div>
+        <div class="b tall"><strong>Post card</strong></div>
+      </div>
+      <div class="row r-2">
+        <div class="b tall"><strong>Post card</strong></div>
+        <div class="b tall"><strong>Post card</strong></div>
+      </div>
+      <div class="b xtall"><strong>Post template</strong><span>title block → meta → prose at 68ch · oversized-quote pull-quote style · end CTA "Need a hand with this? →"</span></div>
+      <div class="b dark"><strong>CTA band + footer</strong></div>
+    </div>
+  </div>
+</section>
+
+<p class="legend">Dashed = content blocks · Solid dark = global chrome. Everything stacks to a single column ≤768px, imagery below text.</p>
+
+</body>
+</html>

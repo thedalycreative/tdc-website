@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TDC Revamp — Services Section Flavours</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* master sunset system */
+    --purple-deep: #755095; --purple-mid: #A57ACC; --lilac: #BF94E3;
+    --peach: #FFDEBF; --marigold: #FFA61E; --orange: #F97E14;
+    --cerise: #E0369B; --teal: #14B8A6; --cream: #FFF8EF;
+    --ink: #2A1E3F; --ink-soft: #5C5470;
+    /* AI flavour */
+    --ai-blue: #2450F0; --ai-yellow: #FFD21E; --ai-green: #0B7A55;
+    --ai-ink: #0D0D12; --ai-grey: #555C6B; --ai-bg: #F5F7FE;
+    /* Cyber flavour */
+    --cy-plum: #46204F; --cy-plum-mid: #6B3178; --cy-lilac: #D9B8EC;
+    /* Training flavour */
+    --tr-mist: #EDF7F2; --tr-green: #0B6B52; --tr-blue: #1D5FA8; --tr-ink: #12312B;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; color: var(--ink); background: var(--cream); }
+  h1, h2, h3 { font-family: 'Baloo 2', sans-serif; }
+
+  .topbar {
+    position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 16px;
+    padding: 13px 26px; background: rgba(255,248,239,.94); border-bottom: 1px solid rgba(42,30,63,.1);
+  }
+  .topbar strong { font-family: 'Baloo 2', sans-serif; font-size: 17px; }
+  .topbar span { font-size: 12.5px; color: var(--ink-soft); }
+
+  .wrap { max-width: 1020px; margin: 0 auto; padding: 0 26px; }
+  .band { padding: 58px 0 70px; }
+  .flav-tag {
+    display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .13em;
+    text-transform: uppercase; margin-bottom: 8px; padding: 5px 12px; border-radius: 999px;
+  }
+  .band h2 { font-size: 36px; margin-bottom: 8px; }
+  .band > .wrap > p.lede { max-width: 600px; font-size: 15px; line-height: 1.6; margin-bottom: 30px; }
+  .chips { display: flex; gap: 8px; margin-bottom: 26px; flex-wrap: wrap; }
+  .chip { width: 62px; height: 40px; border-radius: 9px; position: relative; }
+  .chip i { position: absolute; left: 6px; bottom: 4px; font-style: normal; font-size: 9px; font-weight: 600; background: rgba(255,255,255,.9); color: #333; padding: 1px 5px; border-radius: 4px; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+  .card { border-radius: 18px; padding: 22px; }
+  .card h3 { font-size: 18px; margin-bottom: 6px; }
+  .card p { font-size: 13.5px; line-height: 1.55; }
+  .btn { display: inline-block; font-weight: 700; font-size: 14px; padding: 12px 24px; border-radius: 999px; border: none; cursor: pointer; }
+  .icon-cluster { position: relative; width: 54px; height: 40px; margin-bottom: 12px; }
+  .icon-cluster i { position: absolute; border-radius: 50%; width: 30px; height: 30px; mix-blend-mode: multiply; }
+  svg.divider { display: block; width: 100%; height: 64px; }
+
+  /* ---------- 1 · WEB & BRAND (master system) ---------- */
+  .f-brand { background: var(--cream); }
+  .f-brand .flav-tag { background: var(--peach); color: #8A4A00; }
+  .f-brand h2 { color: var(--ink); }
+  .f-brand .lede { color: var(--ink-soft); }
+  .f-brand .card { background: #fff; box-shadow: inset 0 0 0 1px rgba(42,30,63,.09); }
+  .f-brand .card p { color: var(--ink-soft); }
+  .f-brand .btn { background: var(--marigold); color: var(--ink); }
+
+  /* ---------- 2 · AI & AUTOMATION (bold light, lines + shadows) ---------- */
+  .f-ai { background: var(--ai-bg); color: var(--ai-ink); }
+  .f-ai .flav-tag { background: var(--ai-yellow); color: var(--ai-ink); }
+  .f-ai h2 { color: var(--ai-blue); }
+  .f-ai .lede { color: var(--ai-grey); }
+  .f-ai .card {
+    background: #fff; border: 2px solid var(--ai-ink); border-radius: 14px;
+    box-shadow: 5px 5px 0 var(--ai-ink);
+  }
+  .f-ai .card h3 { color: var(--ai-ink); }
+  .f-ai .card p { color: var(--ai-grey); }
+  .f-ai .card .pill {
+    display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    background: var(--ai-yellow); border: 1.5px solid var(--ai-ink); border-radius: 999px;
+    padding: 3px 10px; margin-bottom: 10px; color: var(--ai-ink);
+  }
+  .f-ai .card:nth-child(2) .pill { background: #fff; }
+  .f-ai .card a { color: var(--ai-green); font-weight: 700; font-size: 13px; text-decoration: none; }
+  .f-ai .btn { background: var(--ai-blue); color: #fff; border: 2px solid var(--ai-ink); box-shadow: 4px 4px 0 var(--ai-ink); border-radius: 12px; }
+
+  /* ---------- 3 · CYBER SECURITY (deep plum, white content) ---------- */
+  .f-cyber { background: var(--cy-plum); color: #fff; }
+  .f-cyber .flav-tag { background: rgba(255,255,255,.14); color: var(--cy-lilac); }
+  .f-cyber h2 { color: #fff; }
+  .f-cyber .lede { color: var(--cy-lilac); }
+  .f-cyber .card { background: rgba(255,255,255,.08); box-shadow: inset 0 0 0 1px rgba(255,255,255,.22); }
+  .f-cyber .card h3 { color: #fff; }
+  .f-cyber .card p { color: var(--cy-lilac); }
+  .f-cyber .card.solid { background: #fff; box-shadow: none; }
+  .f-cyber .card.solid h3 { color: var(--cy-plum); }
+  .f-cyber .card.solid p { color: #5A3D63; }
+  .f-cyber .btn { background: var(--marigold); color: var(--ink); }
+  .f-cyber .ic i { mix-blend-mode: screen; }
+
+  /* ---------- 4 · TRAINING & COACHING (greens/blues, frosted) ---------- */
+  .f-train { background: linear-gradient(135deg, #DFF2E9 0%, var(--tr-mist) 45%, #DFEAF6 100%); color: var(--tr-ink); }
+  .f-train .flav-tag { background: rgba(11,107,82,.12); color: var(--tr-green); }
+  .f-train h2 { color: var(--tr-green); }
+  .f-train .lede { color: #3C554D; }
+  .f-train .card { background: rgba(255,255,255,.72); backdrop-filter: blur(6px); box-shadow: inset 0 0 0 1px rgba(18,49,43,.12); }
+  .f-train .card h3 { color: var(--tr-ink); }
+  .f-train .card p { color: #41584F; }
+  .f-train .card a { color: var(--tr-blue); font-weight: 700; font-size: 13px; text-decoration: none; }
+  .f-train .btn { background: var(--tr-green); color: #fff; }
+
+  .note { max-width: 1020px; margin: 40px auto 70px; padding: 0 26px; font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
+  @media (max-width: 720px) { .cards { grid-template-columns: 1fr; } .band h2 { font-size: 28px; } }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <strong>Services page · section flavours</strong>
+  <span>How /services flows top-to-bottom — each pillar keeps one anchor from the master palette</span>
+</header>
+
+<!-- 1 · WEB & BRAND -->
+<section class="band f-brand">
+  <div class="wrap">
+    <span class="flav-tag">Section 1 · master system</span>
+    <h2>Web, Brand &amp; Marketing</h2>
+    <p class="lede">Runs on the site's core sunset system — cream, overprint shapes, punctuation. This is "home base" before the page shifts flavour.</p>
+    <div class="chips">
+      <div class="chip" style="background:var(--purple-deep)"><i>755095</i></div>
+      <div class="chip" style="background:var(--marigold)"><i>FFA61E</i></div>
+      <div class="chip" style="background:var(--cerise)"><i>E0369B</i></div>
+      <div class="chip" style="background:var(--cream);box-shadow:inset 0 0 0 1px #ddd"><i>FFF8EF</i></div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon-cluster"><i style="background:var(--marigold);left:0"></i><i style="background:var(--lilac);left:18px"></i></div>
+        <h3>Custom Website Development</h3>
+        <p>Strategy-first websites built to convert — not templates with your logo dropped in.</p>
+      </div>
+      <div class="card">
+        <div class="icon-cluster"><i style="background:var(--cerise);left:0"></i><i style="background:var(--teal);left:18px"></i></div>
+        <h3>Strategic Brand Identity</h3>
+        <p>Logos, palettes and voice that mean something — and survive contact with real marketing.</p>
+      </div>
+    </div>
+    <button class="btn">Start a project</button>
+  </div>
+</section>
+
+<svg class="divider" viewBox="0 0 1000 64" preserveAspectRatio="none" aria-hidden="true" style="background:var(--cream)">
+  <path d="M0,64 L0,30 C220,-10 480,58 720,26 C850,10 940,22 1000,16 L1000,64 Z" fill="#F5F7FE"/>
+</svg>
+
+<!-- 2 · AI & AUTOMATION -->
+<section class="band f-ai" id="ai">
+  <div class="wrap">
+    <span class="flav-tag">Section 2 · AI flavour</span>
+    <h2>AI &amp; Automation</h2>
+    <p class="lede">Inverts the softness: crisp white cards, black keylines, hard offset shadows. Bold blue headings, yellow badges, green links — the marigold's punchier cousin keeps it in the family.</p>
+    <div class="chips">
+      <div class="chip" style="background:var(--ai-blue)"><i>2450F0</i></div>
+      <div class="chip" style="background:var(--ai-yellow)"><i>FFD21E</i></div>
+      <div class="chip" style="background:var(--ai-green)"><i>0B7A55</i></div>
+      <div class="chip" style="background:#fff;box-shadow:inset 0 0 0 2px var(--ai-ink)"><i>FFFFFF</i></div>
+      <div class="chip" style="background:var(--ai-ink)"><i>0D0D12</i></div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <span class="pill">Most popular</span>
+        <h3>Workflow Automation</h3>
+        <p>Hand the repetitive stuff to a system that never gets bored. Hours back, every week.</p>
+      </div>
+      <div class="card">
+        <span class="pill">New</span>
+        <h3>Smart Chatbots</h3>
+        <p>Trained on your business, answering like your best staff member — at 2am.</p>
+      </div>
+    </div>
+    <button class="btn">Explore AI services</button>
+  </div>
+</section>
+
+<svg class="divider" viewBox="0 0 1000 64" preserveAspectRatio="none" aria-hidden="true" style="background:#F5F7FE">
+  <path d="M0,64 L0,34 C260,70 520,-8 780,30 C880,44 950,38 1000,34 L1000,64 Z" fill="#46204F"/>
+</svg>
+
+<!-- 3 · CYBER SECURITY -->
+<section class="band f-cyber" id="security">
+  <div class="wrap">
+    <span class="flav-tag">Section 3 · Cyber flavour</span>
+    <h2>Cyber Security</h2>
+    <p class="lede">The page drops into deep plum — serious territory, still warm. White and glass cards carry the content; lilac supporting text; the sunset marigold button ties it back home.</p>
+    <div class="chips">
+      <div class="chip" style="background:var(--cy-plum);box-shadow:inset 0 0 0 1px rgba(255,255,255,.4)"><i>46204F</i></div>
+      <div class="chip" style="background:var(--cy-plum-mid)"><i>6B3178</i></div>
+      <div class="chip" style="background:var(--cy-lilac)"><i>D9B8EC</i></div>
+      <div class="chip" style="background:#fff"><i>FFFFFF</i></div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon-cluster ic"><i style="background:var(--cy-plum-mid);left:0"></i><i style="background:var(--cerise);left:18px"></i></div>
+        <h3>Security Health Check</h3>
+        <p>A plain-English audit of where your business is exposed — and what to fix first.</p>
+      </div>
+      <div class="card solid">
+        <h3>Ongoing Protection</h3>
+        <p>Monitoring, updates and backups handled — so a bad Tuesday doesn't become a bad year.</p>
+      </div>
+    </div>
+    <button class="btn">Get a health check</button>
+  </div>
+</section>
+
+<svg class="divider" viewBox="0 0 1000 64" preserveAspectRatio="none" aria-hidden="true" style="background:#46204F">
+  <path d="M0,64 L0,28 C240,66 500,-6 760,32 C870,46 950,40 1000,36 L1000,64 Z" fill="#DFF2E9"/>
+</svg>
+
+<!-- 4 · TRAINING & COACHING -->
+<section class="band f-train" id="training">
+  <div class="wrap">
+    <span class="flav-tag">Section 4 · Training flavour</span>
+    <h2>Training &amp; Coaching</h2>
+    <p class="lede">Greens and blues over a soft gradient, frosted-glass cards, calm dark-green type. The growth end of the page — lighter, breathable, forward-looking.</p>
+    <div class="chips">
+      <div class="chip" style="background:var(--tr-green)"><i>0B6B52</i></div>
+      <div class="chip" style="background:var(--tr-blue)"><i>1D5FA8</i></div>
+      <div class="chip" style="background:var(--tr-mist);box-shadow:inset 0 0 0 1px #cbdcd3"><i>EDF7F2</i></div>
+      <div class="chip" style="background:rgba(255,255,255,.75);box-shadow:inset 0 0 0 1px #cbdcd3"><i>white·72%</i></div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h3>Training &amp; Empowerment</h3>
+        <p>Your team, confident with the tools — not dependent on us forever. That's the point.</p>
+        <a href="#">See workshops →</a>
+      </div>
+      <div class="card">
+        <h3>Grow &amp; Support Plan</h3>
+        <p>A partner on retainer: reviews, tweaks and a roadmap that keeps pace with you.</p>
+        <a href="#">How it works →</a>
+      </div>
+    </div>
+    <button class="btn">Book a session</button>
+  </div>
+</section>
+
+<p class="note"><strong>How it hangs together:</strong> Baloo 2 + Inter everywhere · same card radii, button shapes and overprint icon language · wavy dividers handle every flavour hand-off · each sub-palette borrows an anchor from the master system (AI yellow ↔ marigold, Cyber plum ↔ purple/cerise, Training green-blue ↔ teal). All text pairings measured ≥ 4.5:1 (AA).</p>
+
+</body>
+</html>
