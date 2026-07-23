@@ -17,7 +17,9 @@
 <header class="site-header">
   <div class="wrap">
     <a class="logo" href="/">tdc<span class="stop">.</span><span class="visually-hidden"> — The Daly Creative, home</span></a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul>
         <li><a href="/services">Services</a></li>
@@ -26,6 +28,16 @@
         <li><a href="/blog">Blog</a></li>
         <li><a class="btn btn-primary btn-sm" href="/contact">Let's talk</a></li>
       </ul>
+      <div class="nav-contact mobile-only">
+        <p>Get in touch</p>
+        <a href="mailto:contact@thedalycreative.com">contact@thedalycreative.com</a>
+        <a href="tel:+61414265050">0414 265 050</a>
+        <div class="nav-socials">
+          <a href="https://www.instagram.com/thedalycreative/" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/thedalycreative/" rel="noopener">Facebook</a>
+          <a href="https://www.linkedin.com/in/thetimdaly/" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
     </nav>
   </div>
 </header>
@@ -44,6 +56,26 @@
   <section class="section" aria-label="Projects" style="padding-top:24px;">
     <div class="wrap">
       <div class="grid-2">
+        <article class="card project-card reveal">
+          <img src="/assets/img/portfolio/liam-graham.svg" alt="Liam Graham actor portfolio site" loading="lazy">
+          <div class="project-body">
+            <p class="kicker" style="margin-bottom:6px;">Arts &amp; performance</p>
+            <h2 style="font-size:var(--step-2);">Liam Graham</h2>
+            <p>A performer's portfolio built to get seen — showreel, credits and contact details in one fast, casting-ready presence that works as well on a phone as in a casting office.</p>
+            <div class="tag-row"><span class="tag">Web design</span><span class="tag">Personal brand</span><span class="tag">Performance</span></div>
+            <a class="card-link" href="https://liam-graham-actor-thedalycreative.vercel.app/" rel="noopener">Visit website<span class="visually-hidden"> — Liam Graham (opens external site)</span> &rarr;</a>
+          </div>
+        </article>
+        <article class="card project-card reveal">
+          <img src="/assets/img/portfolio/renter-rights-hub.png" alt="Perth Renter Rights Hub web app homepage" loading="lazy">
+          <div class="project-body">
+            <p class="kicker" style="margin-bottom:6px;">Civic &amp; AI</p>
+            <h2 style="font-size:var(--step-2);">Perth Renter Rights Hub</h2>
+            <p>WA tenancy law made simple. An AI-assisted tool that turns the Residential Tenancies Act 1987 into plain-English answers, with notice and bond calculators plus template letters.</p>
+            <div class="tag-row"><span class="tag">Web app</span><span class="tag">AI assistant</span><span class="tag">UX design</span></div>
+            <a class="card-link" href="https://renter-rights-hub.vercel.app/" rel="noopener">Visit website<span class="visually-hidden"> — Perth Renter Rights Hub (opens external site)</span> &rarr;</a>
+          </div>
+        </article>
         <article class="card project-card reveal">
           <img src="/assets/img/portfolio/skywings.png" alt="SkyWings Activity web app homepage" loading="lazy">
           <div class="project-body">
