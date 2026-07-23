@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Work | The Daly Creative</title>
-<meta name="description" content="Selected projects from The Daly Creative — strategy-led websites and brand identities for aviation, hospitality, health, trades and more. Custom-built, designed to convert.">
+<meta name="description" content="The full portfolio from The Daly Creative — client websites and brands, campus systems for Equinim College, web apps and tools, and interactive games. Strategy-led, custom-built, all live.">
 <link rel="icon" href="/assets/img/brand/icon-256.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,6 +42,18 @@
   </div>
 </header>
 
+<nav class="cat-nav" aria-label="Portfolio categories">
+  <div class="wrap">
+    <ul>
+      <li><a href="#featured">Featured</a></li>
+      <li><a href="#client-work">Client sites &amp; brands</a></li>
+      <li><a href="#campus">Campus systems</a></li>
+      <li><a href="#apps">Apps &amp; tools</a></li>
+      <li><a href="#interactive">Games &amp; interactive</a></li>
+    </ul>
+  </div>
+</nav>
+
 <main id="main">
 
   <section class="hero" style="padding-block:clamp(40px,7vw,72px);">
@@ -49,93 +61,363 @@
     <div class="wrap">
       <p class="kicker">Our portfolio</p>
       <h1 style="max-width:18ch;">Projects that perform in the real world<span class="stop" style="color:var(--orange);">.</span></h1>
-      <p class="lede" style="color:var(--ink-soft); margin-top:16px; max-width:52ch;">Strategy-led, custom-built and designed to convert. Every one starts with a business problem, not a template.</p>
+      <p class="lede" style="color:var(--ink-soft); margin-top:16px; max-width:56ch;">Client brands, campus systems, apps and the odd game. Strategy-led, custom-built, and every one of them live — follow any link and you'll land on the real thing.</p>
     </div>
   </section>
 
-  <section class="section" aria-label="Projects" style="padding-top:24px;">
+  <!-- ============ FEATURED CASE STUDY ============ -->
+  <section class="section" id="featured" aria-labelledby="featured-title" style="padding-top:8px;">
     <div class="wrap">
-      <div class="grid-2">
+      <article class="case-study reveal">
+        <div class="case-head">
+          <p class="kicker">Featured build</p>
+          <h2 id="featured-title">EQC Perth Campus Dashboard</h2>
+          <p style="max-width:62ch; margin-top:10px;">One system, three very different screens. A live campus dashboard for Equinim College's Perth campus — each view designed around the device it actually runs on, rather than one layout stretched to fit everything.</p>
+          <div class="tag-row" style="margin-top:16px;">
+            <span class="tag">Multi-device UI</span><span class="tag">Live data</span><span class="tag">Wayfinding</span><span class="tag">Admin tooling</span>
+          </div>
+          <div class="btn-row" style="margin-top:20px;">
+            <a class="btn btn-primary btn-arrow" href="https://www.perth-eqc.xyz" rel="noopener">Visit the dashboard<span class="visually-hidden"> (opens external site)</span></a>
+          </div>
+        </div>
+        <div class="device-grid">
+          <div class="device device-tv">
+            <img src="/assets/img/portfolio/eqc-welcome-tv.png" alt="EQC welcome board on a wall-mounted screen: room allocations, campus map, news ticker and upcoming events" loading="lazy">
+            <span class="device-label">Wall-mounted TV · fixed 16:9</span>
+            <h3>Lobby welcome board</h3>
+            <p>Built for one fixed screen in the lobby — no scrolling, no interaction. Everything sits in a single 1080p frame and stays readable from across the room: room allocations, campus map, live clock, news ticker and a QR code to the mobile version.</p>
+          </div>
+          <div class="device device-tablet">
+            <img src="/assets/img/portfolio/eqc-admin.png" alt="EQC admin panel login screen shown at tablet width" loading="lazy">
+            <span class="device-label">Responsive · any device</span>
+            <h3>Admin panel</h3>
+            <p>Fully responsive, because trainers open it wherever they are — laptop at the desk, iPad in the corridor, phone between classes. Admins sign in with a universal password; trainers get their own.</p>
+          </div>
+          <div class="device device-phone">
+            <img src="/assets/img/portfolio/eqc-mobile.png" alt="EQC campus companion on a phone: address, contacts, room availability and events with a bottom tab bar" loading="lazy">
+            <span class="device-label">Smartphone-first</span>
+            <h3>Campus companion</h3>
+            <p>The phone view students and trainers actually carry. Thumb-reachable bottom tabs, room availability, maps, emergency info and contacts — designed for a phone first, not shrunk down to one.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ CLIENT WORK ============ -->
+  <section class="section" id="client-work" aria-labelledby="client-title" style="background:#fff;">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Category 01</p>
+        <h2 id="client-title">Client sites &amp; brands<span class="count-chip">7 projects</span></h2>
+        <p>Businesses that needed a presence worth paying attention to — health, hospitality, trades, the arts and beyond.</p>
+      </div>
+      <div class="grid-3">
+
+        <article class="card project-card reveal">
+          <img src="/assets/img/portfolio/dora-health.png" alt="Dora Health and Wellbeing website homepage" loading="lazy">
+          <div class="project-body">
+            <p class="kicker" style="margin-bottom:6px;">Health &amp; wellness</p>
+            <h3>Dora Health &amp; Wellbeing</h3>
+            <p>Compassionate in-home care, presented with the warmth it deserves. Brand identity built from the ground up, then carried through a full site.</p>
+            <div class="tag-row"><span class="tag">Brand identity</span><span class="tag">Web design</span></div>
+            <a class="card-link" href="https://dorahealth-website-2026.vercel.app" rel="noopener">Visit website<span class="visually-hidden"> — Dora Health (opens external site)</span> &rarr;</a>
+          </div>
+        </article>
+
         <article class="card project-card reveal">
           <img src="/assets/img/portfolio/liam-graham.png" alt="Liam Graham actor portfolio site homepage" loading="lazy">
           <div class="project-body">
             <p class="kicker" style="margin-bottom:6px;">Arts &amp; performance</p>
-            <h2 style="font-size:var(--step-2);">Liam Graham</h2>
-            <p>A performer's portfolio built to get seen — showreel, credits and contact details in one fast, casting-ready presence that works as well on a phone as in a casting office.</p>
-            <div class="tag-row"><span class="tag">Web design</span><span class="tag">Personal brand</span><span class="tag">Performance</span></div>
+            <h3>Liam Graham</h3>
+            <p>A performer's portfolio built to get seen — showreel, credits and contact in one fast, casting-ready presence.</p>
+            <div class="tag-row"><span class="tag">Web design</span><span class="tag">Personal brand</span></div>
             <a class="card-link" href="https://liam-graham-actor.vercel.app/" rel="noopener">Visit website<span class="visually-hidden"> — Liam Graham (opens external site)</span> &rarr;</a>
           </div>
         </article>
+
         <article class="card project-card reveal">
-          <img src="/assets/img/portfolio/renter-rights-hub.png" alt="Perth Renter Rights Hub web app homepage" loading="lazy">
+          <img src="/assets/img/portfolio/pawping.png" alt="PawPing pet tracker website homepage" loading="lazy">
           <div class="project-body">
-            <p class="kicker" style="margin-bottom:6px;">Civic &amp; AI</p>
-            <h2 style="font-size:var(--step-2);">Perth Renter Rights Hub</h2>
-            <p>WA tenancy law made simple. An AI-assisted tool that turns the Residential Tenancies Act 1987 into plain-English answers, with notice and bond calculators plus template letters.</p>
-            <div class="tag-row"><span class="tag">Web app</span><span class="tag">AI assistant</span><span class="tag">UX design</span></div>
-            <a class="card-link" href="https://renter-rights-hub.vercel.app/" rel="noopener">Visit website<span class="visually-hidden"> — Perth Renter Rights Hub (opens external site)</span> &rarr;</a>
+            <p class="kicker" style="margin-bottom:6px;">Pet tech &amp; e-commerce</p>
+            <h3>PawPing</h3>
+            <p>QR pet tags with Apple Find My precision. A product site that explains the tech simply and sells it — clear, warm and conversion-focused.</p>
+            <div class="tag-row"><span class="tag">Product site</span><span class="tag">Brand identity</span></div>
+            <a class="card-link" href="https://perthpaws.xyz" rel="noopener">Visit website<span class="visually-hidden"> — PawPing (opens external site)</span> &rarr;</a>
           </div>
         </article>
-        <article class="card project-card reveal">
-          <img src="/assets/img/portfolio/skywings.png" alt="SkyWings Activity web app homepage" loading="lazy">
-          <div class="project-body">
-            <p class="kicker" style="margin-bottom:6px;">Aviation &amp; leisure</p>
-            <h2 style="font-size:var(--step-2);">SkyWings Activity</h2>
-            <p>Interactive activity tracking for aviation fans — a high-performance web app built for speed, responsiveness and real-time user data.</p>
-            <div class="tag-row"><span class="tag">Web app</span><span class="tag">Interactive UI</span><span class="tag">UX design</span></div>
-            <a class="card-link" href="https://skywings-activity.vercel.app/" rel="noopener">Visit website<span class="visually-hidden"> — SkyWings Activity (opens external site)</span> &rarr;</a>
-          </div>
-        </article>
+
         <article class="card project-card reveal">
           <img src="/assets/img/portfolio/preservation-framers.png" alt="Preservation Framers website homepage" loading="lazy">
           <div class="project-body">
             <p class="kicker" style="margin-bottom:6px;">Art &amp; preservation</p>
-            <h2 style="font-size:var(--step-2);">Preservation Framers</h2>
-            <p>Handcrafted excellence for cherished memories — an elegant presence for a premium framing service, with local SEO driving foot traffic to their boutique.</p>
-            <div class="tag-row"><span class="tag">Web design</span><span class="tag">Local SEO</span><span class="tag">Visual identity</span></div>
+            <h3>Preservation Framers</h3>
+            <p>Handcrafted excellence for cherished memories — an elegant presence for a premium framing service, with local SEO driving foot traffic to the boutique.</p>
+            <div class="tag-row"><span class="tag">Web design</span><span class="tag">Local SEO</span></div>
             <a class="card-link" href="https://www.preservationframers.com.au/" rel="noopener">Visit website<span class="visually-hidden"> — Preservation Framers (opens external site)</span> &rarr;</a>
           </div>
         </article>
+
         <article class="card project-card reveal">
           <img src="/assets/img/portfolio/wce-pros.png" alt="West Coast Exterior Pros website homepage" loading="lazy">
           <div class="project-body">
-            <p class="kicker" style="margin-bottom:6px;">Exterior services</p>
-            <h2 style="font-size:var(--step-2);">West Coast Exterior Pros</h2>
+            <p class="kicker" style="margin-bottom:6px;">Trades &amp; services</p>
+            <h3>West Coast Exterior Pros</h3>
             <p>Perth's trusted exterior cleaning specialists — brand and web presence built to match a professional reputation, and to generate leads.</p>
-            <div class="tag-row"><span class="tag">Web development</span><span class="tag">Brand identity</span><span class="tag">Lead gen</span></div>
+            <div class="tag-row"><span class="tag">Web development</span><span class="tag">Lead gen</span></div>
             <a class="card-link" href="https://www.wcepros.com/" rel="noopener">Visit website<span class="visually-hidden"> — West Coast Exterior Pros (opens external site)</span> &rarr;</a>
           </div>
         </article>
+
         <article class="card project-card reveal">
           <img src="/assets/img/portfolio/drumplings.png" alt="Drumplings website homepage" loading="lazy">
           <div class="project-body">
             <p class="kicker" style="margin-bottom:6px;">Hospitality &amp; e-commerce</p>
-            <h2 style="font-size:var(--step-2);">Drumplings</h2>
+            <h3>Drumplings</h3>
             <p>The world's first fusion dumpling brand — a brand experience as bold and inventive as the menu, from packaging to ordering flow.</p>
-            <div class="tag-row"><span class="tag">Brand strategy</span><span class="tag">Web design</span><span class="tag">Packaging</span></div>
+            <div class="tag-row"><span class="tag">Brand strategy</span><span class="tag">Web design</span></div>
             <a class="card-link" href="https://www.drumplings.com/" rel="noopener">Visit website<span class="visually-hidden"> — Drumplings (opens external site)</span> &rarr;</a>
           </div>
         </article>
+
         <article class="card project-card reveal">
-          <img src="/assets/img/portfolio/dora-health.png" alt="Dora Health and Wellbeing brand presence" loading="lazy">
+          <img src="/assets/img/portfolio/skywings.png" alt="SkyWings resort and activity site homepage" loading="lazy">
           <div class="project-body">
-            <p class="kicker" style="margin-bottom:6px;">Health &amp; wellness</p>
-            <h2 style="font-size:var(--step-2);">Dora Health &amp; Wellbeing</h2>
-            <p>Building an international community around women's health — brand identity developed from the ground up, with digital strategy and guidelines.</p>
-            <div class="tag-row"><span class="tag">Brand identity</span><span class="tag">Digital strategy</span><span class="tag">Social</span></div>
-            <a class="card-link" href="https://www.instagram.com/dora_health/" rel="noopener">View on Instagram<span class="visually-hidden"> — Dora Health (opens external site)</span> &rarr;</a>
+            <p class="kicker" style="margin-bottom:6px;">Travel &amp; leisure</p>
+            <h3>SkyWings</h3>
+            <p>Curated luxury and handpicked resorts — a high-performance site built for speed, responsiveness and real-time interaction.</p>
+            <div class="tag-row"><span class="tag">Web app</span><span class="tag">UX design</span></div>
+            <a class="card-link" href="https://skywings-activity.vercel.app/" rel="noopener">Visit website<span class="visually-hidden"> — SkyWings (opens external site)</span> &rarr;</a>
           </div>
         </article>
+
+      </div>
+    </div>
+  </section>
+
+  <svg class="divider" viewBox="0 0 1000 64" preserveAspectRatio="none" aria-hidden="true" style="background:#fff;">
+    <path d="M0,64 L0,30 C220,-10 480,58 720,26 C850,10 940,22 1000,16 L1000,64 Z" fill="#FFF8EF"/>
+  </svg>
+
+  <!-- ============ CAMPUS SYSTEMS ============ -->
+  <section class="section" id="campus" aria-labelledby="campus-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Category 02</p>
+        <h2 id="campus-title">Campus &amp; education systems<span class="count-chip">10 projects</span></h2>
+        <p>An ongoing body of work for Equinim College — class hubs, dashboards, attendance tools and teaching resources, built alongside real cohorts and used daily by trainers and students.</p>
+      </div>
+      <div class="grid-3">
+
         <article class="card project-card reveal">
-          <img src="/assets/img/portfolio/pawfection.png" alt="Pawfection website homepage" loading="lazy">
+          <img src="/assets/img/portfolio/eqc-25g-dashboard.png" alt="25G Dashboard with attendance leaderboard and subject tracking" loading="lazy">
           <div class="project-body">
-            <p class="kicker" style="margin-bottom:6px;">Pet services</p>
-            <h2 style="font-size:var(--step-2);">Pawfection</h2>
-            <p>Premium pet care, beautifully presented — a warm, playful identity and a conversion-focused site connecting pet owners with trusted local care.</p>
-            <div class="tag-row"><span class="tag">Web design</span><span class="tag">Brand identity</span><span class="tag">Local SEO</span></div>
-            <a class="card-link" href="https://www.pawfection.xyz/" rel="noopener">Visit website<span class="visually-hidden"> — Pawfection (opens external site)</span> &rarr;</a>
+            <p class="kicker" style="margin-bottom:6px;">Cohort dashboard</p>
+            <h3>25G Dashboard</h3>
+            <p>A live classroom command centre — attendance leaderboards, subject progress and daily check-ins on one dark-mode board.</p>
+            <div class="tag-row"><span class="tag">Dashboard</span><span class="tag">Gamification</span></div>
+            <a class="card-link" href="https://25g-dashboard.vercel.app" rel="noopener">Visit site<span class="visually-hidden"> — 25G Dashboard (opens external site)</span> &rarr;</a>
           </div>
         </article>
+
+        <article class="card project-card reveal">
+          <img src="/assets/img/portfolio/eqc-intake-26b.png" alt="Intake 26B dashboard showing trainer, attendance, quiz and course progress panels" loading="lazy">
+          <div class="project-body">
+            <p class="kicker" style="margin-bottom:6px;">Cohort dashboard</p>
+            <h3>Intake 26B</h3>
+            <p>Diploma of IT cohort hub — today's topics, attendance, a daily quiz and course progress, all on a single glanceable screen.</p>
+            <div class="tag-row"><span class="tag">Dashboard</span><span class="tag">Daily quiz</span></div>
+            <a class="card-link" href="https://intake-25g-dashboard.vercel.app" rel="noopener">Visit site<span class="visually-hidden"> — Intake 26B (opens external site)</span> &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card project-card reveal">
+          <img src="/assets/img/portfolio/eqc-quokka-squad.png" alt="Quokka Squad 25g class hub homepage" loading="lazy">
+          <div class="project-body">
+            <p class="kicker" style="margin-bottom:6px;">Class hub</p>
+            <h3>Quokka Squad 25g</h3>
+            <p>A friendly landing pad for the intake — schedules, resources and quick links, with QR-code attendance check-in built in.</p>
+            <div class="tag-row"><span class="tag">Class hub</span><span class="tag">QR attendance</span></div>
+            <a class="card-link" href="https://eqc-intake-25g.vercel.app" rel="noopener">Visit site<span class="visually-hidden"> — Quokka Squad 25g (opens external site)</span> &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card project-card reveal">
+          <img src="/assets/img/portfolio/eqc-classhub-26b.png" alt="26B Class Hub with course overview and lesson resources" loading="lazy">
+          <div class="project-body">
+            <p class="kicker" style="margin-bottom:6px;">Class hub</p>
+            <h3>26B Class Hub</h3>
+            <p>Front-end web dev course hub — schedule, downloads, cheat sheets and lesson code, bookmarked by the whole cohort.</p>
+            <div class="tag-row"><span class="tag">Class hub</span><span class="tag">Resources</span></div>
+            <a class="card-link" href="https://eqc-26b-classhub.vercel.app" rel="noopener">Visit site<span class="visually-hidden"> — 26B Class Hub (opens external site)</span> &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card project-card reveal">
+          <img src="/assets/img/portfolio/eqc-classhub-2613.png" alt="Tim's EQC Minions class hub for intake 26.13" loading="lazy">
+          <div class="project-body">
+            <p class="kicker" style="margin-bottom:6px;">Class hub</p>
+            <h3>Intake 26.13 Hub</h3>
+            <p>Central hub for the web development intake — install-your-tools onboarding, attendance and each week's class in one place.</p>
+            <div class="tag-row"><span class="tag">Class hub</span><span class="tag">Onboarding</span></div>
+            <a class="card-link" href="https://eqc-2613-classhub.vercel.app" rel="noopener">Visit site<span class="visually-hidden"> — Intake 26.13 Hub (opens external site)</span> &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card project-card reveal">
+          <img src="/assets/img/portfolio/eqc-class-page-25g.png" alt="Intake 25g class page showing subject 3 back-end web app project" loading="lazy">
+          <div class="project-body">
+            <p class="kicker" style="margin-bottom:6px;">Class hub</p>
+            <h3>Intake 25g Class Page</h3>
+            <p>Subject-by-subject project briefs with a daily trivia game and attendance leaderboard to keep a long course moving.</p>
+            <div class="tag-row"><span class="tag">Class hub</span><span class="tag">Project briefs</span></div>
+            <a class="card-link" href="https://class-page-inky.vercel.app" rel="noopener">Visit site<span class="visually-hidden"> — Intake 25g Class Page (opens external site)</span> &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card project-card reveal">
+          <img src="/assets/img/portfolio/webdev-bootstrap.png" alt="Bootstrap Hiring Ceremony teaching tool" loading="lazy">
+          <div class="project-body">
+            <p class="kicker" style="margin-bottom:6px;">Teaching tool</p>
+            <h3>Bootstrap Hiring Ceremony</h3>
+            <p>Turns a coding brief into a live event — students are drafted as employee cards into fictional companies, so a dry framework lesson gets some theatre.</p>
+            <div class="tag-row"><span class="tag">Teaching tool</span><span class="tag">Live event</span></div>
+            <a class="card-link" href="https://webdev-bootstrap.vercel.app" rel="noopener">Visit site<span class="visually-hidden"> — Bootstrap Hiring Ceremony (opens external site)</span> &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card project-card reveal">
+          <img src="/assets/img/portfolio/quokka-careers.png" alt="Quokka Careers fake tech recruiter teaching site" loading="lazy">
+          <div class="project-body">
+            <p class="kicker" style="margin-bottom:6px;">Teaching tool</p>
+            <h3>Quokka Careers™</h3>
+            <p>"The internet's most emotionally supportive fake tech recruiter" — a job-application sandbox that lets students practise for real without the rejection.</p>
+            <div class="tag-row"><span class="tag">Teaching tool</span><span class="tag">Copywriting</span></div>
+            <a class="card-link" href="https://eqc-25g-quokkascareers.vercel.app" rel="noopener">Visit site<span class="visually-hidden"> — Quokka Careers (opens external site)</span> &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card project-card reveal">
+          <img src="/assets/img/portfolio/eqc-yearbook-26b.png" alt="26B Yearbook Wall submission page" loading="lazy">
+          <div class="project-body">
+            <p class="kicker" style="margin-bottom:6px;">Community</p>
+            <h3>26B Yearbook Wall</h3>
+            <p>A digital yearbook the cohort fills in themselves — three facts each, two true, one a lie, revealed on click.</p>
+            <div class="tag-row"><span class="tag">Community</span><span class="tag">Interactive</span></div>
+            <a class="card-link" href="https://www.eqc-26b.xyz" rel="noopener">Visit site<span class="visually-hidden"> — 26B Yearbook (opens external site)</span> &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card project-card reveal">
+          <img src="/assets/img/portfolio/eqc-welcome-tv.png" alt="EQC Perth Campus Dashboard lobby welcome board" loading="lazy">
+          <div class="project-body">
+            <p class="kicker" style="margin-bottom:6px;">Campus system</p>
+            <h3>EQC Perth Campus Dashboard</h3>
+            <p>The lobby board, admin panel and mobile companion covered in the featured build above.</p>
+            <div class="tag-row"><span class="tag">Multi-device</span><span class="tag">Live data</span></div>
+            <a class="card-link" href="#featured">See the full breakdown &uarr;</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <svg class="divider" viewBox="0 0 1000 64" preserveAspectRatio="none" aria-hidden="true" style="background:var(--cream);">
+    <path d="M0,64 L0,34 C260,70 520,-8 780,30 C880,44 950,38 1000,34 L1000,64 Z" fill="#FFFFFF"/>
+  </svg>
+
+  <!-- ============ APPS & TOOLS ============ -->
+  <section class="section" id="apps" aria-labelledby="apps-title" style="background:#fff;">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Category 03</p>
+        <h2 id="apps-title">Apps &amp; tools<span class="count-chip">2 projects</span></h2>
+        <p>Products that do a job — turning dense information or manual admin into something a person can actually use.</p>
+      </div>
+      <div class="grid-2">
+
+        <article class="card project-card reveal">
+          <img src="/assets/img/portfolio/renter-rights-hub.png" alt="Perth Renter Rights Hub web app homepage" loading="lazy">
+          <div class="project-body">
+            <p class="kicker" style="margin-bottom:6px;">Civic &amp; AI</p>
+            <h3>Perth Renter Rights Hub</h3>
+            <p>WA tenancy law made simple. An AI-assisted tool that turns the Residential Tenancies Act 1987 into plain-English answers, with notice and bond calculators, topic guides and template letters.</p>
+            <div class="tag-row"><span class="tag">Web app</span><span class="tag">AI assistant</span><span class="tag">UX design</span></div>
+            <a class="card-link" href="https://renter-rights-hub.vercel.app/" rel="noopener">Visit website<span class="visually-hidden"> — Perth Renter Rights Hub (opens external site)</span> &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card project-card reveal">
+          <img src="/assets/img/portfolio/dr-mauri-feedback.png" alt="Dr Christian Mauri training session feedback form" loading="lazy">
+          <div class="project-body">
+            <p class="kicker" style="margin-bottom:6px;">Professional services</p>
+            <h3>Training Session Feedback</h3>
+            <p>A clean feedback capture tool for Dr Christian Mauri's training sessions — structured ratings and comments that are quick to fill in and easy to act on.</p>
+            <div class="tag-row"><span class="tag">Forms</span><span class="tag">Data capture</span></div>
+            <a class="card-link" href="https://project-u59ql.vercel.app" rel="noopener">Visit website<span class="visually-hidden"> — Training Session Feedback (opens external site)</span> &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GAMES & INTERACTIVE ============ -->
+  <section class="section" id="interactive" aria-labelledby="interactive-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Category 04</p>
+        <h2 id="interactive-title">Games &amp; interactive<span class="count-chip">5 projects</span></h2>
+        <p>Where the experiments live. Built fast, usually for a class or a celebration — and genuinely useful for pressure-testing an idea before it goes near client work.</p>
+      </div>
+      <div class="grid-3">
+
+        <article class="card project-mini reveal">
+          <img src="/assets/img/portfolio/skwerdiality.png" alt="Scwerdiality Aussie word search game" loading="lazy">
+          <div class="project-body">
+            <h3>Scwerdiality</h3>
+            <p>An Aussie word-search game with a timer, scoring and a very red grid.</p>
+            <a class="card-link" href="https://skwerdiality-game.vercel.app" rel="noopener">Play<span class="visually-hidden"> Scwerdiality (opens external site)</span> &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card project-mini reveal">
+          <img src="/assets/img/portfolio/class-games-hub.png" alt="Class Games Hub with emoji guess game and AI prompts playground" loading="lazy">
+          <div class="project-body">
+            <h3>Class Games Hub</h3>
+            <p>Emoji guessing, an AI prompts playground and two-truths-and-a-lie, bundled for class warm-ups.</p>
+            <a class="card-link" href="https://nugget-warriors-party.vercel.app" rel="noopener">Play<span class="visually-hidden"> Class Games Hub (opens external site)</span> &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card project-mini reveal">
+          <img src="/assets/img/portfolio/dave-vs-puzzles.png" alt="Dave vs Puzzles game" loading="lazy">
+          <div class="project-body">
+            <h3>Dave vs. Puzzles</h3>
+            <p>A cheeky single-player puzzle challenge built as a gift, with escalating difficulty.</p>
+            <a class="card-link" href="https://shockdave.xyz" rel="noopener">Play<span class="visually-hidden"> Dave vs Puzzles (opens external site)</span> &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card project-mini reveal">
+          <img src="/assets/img/portfolio/ask-me.png" alt="Ask Me question game" loading="lazy">
+          <div class="project-body">
+            <h3>Ask Me</h3>
+            <p>A conversation-starter game — pick a pack, get a question, keep the chat going.</p>
+            <a class="card-link" href="https://ask-game.vercel.app" rel="noopener">Play<span class="visually-hidden"> Ask Me (opens external site)</span> &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card project-mini reveal">
+          <img src="/assets/img/portfolio/pink-ranger.png" alt="Pink Ranger of Cloverdale interactive invite" loading="lazy">
+          <div class="project-body">
+            <h3>Pink Ranger of Cloverdale</h3>
+            <p>A neon, comic-styled interactive invite — proof that a party page can have a whole plot.</p>
+            <a class="card-link" href="https://pink-power-ranger-alex.vercel.app" rel="noopener">Visit<span class="visually-hidden"> Pink Ranger of Cloverdale (opens external site)</span> &rarr;</a>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
@@ -146,7 +428,7 @@
       <div class="section-head">
         <p class="kicker">Trusted by</p>
         <h2 id="clients-title">Brands we've helped shape.</h2>
-        <p>Websites, identities, strategy and creative direction across hospitality, health, trades, arts and the public sector.</p>
+        <p>Websites, identities, strategy and creative direction across hospitality, health, trades, arts, education and the public sector.</p>
       </div>
       <ul style="list-style:none; display:grid; grid-template-columns:repeat(auto-fill, minmax(130px, 1fr)); gap:20px; align-items:center;">
         <li><img src="/assets/img/clients/preservation-logo.png" alt="Preservation Framers" loading="lazy" style="max-height:56px; width:auto; margin-inline:auto;"></li>
@@ -179,7 +461,8 @@
       <h2 id="cta-title">Want your brand featured here next?</h2>
       <p>Let's build something that works as hard as you do.</p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="/contact">Book a strategy call</a>
+        <a class="btn btn-primary btn-lg btn-arrow" href="/contact">Book a strategy call</a>
+        <a class="btn btn-on-dark" href="/services">Explore services</a>
       </div>
     </div>
   </section>

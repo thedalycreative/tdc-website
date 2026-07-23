@@ -1,3 +1,4 @@
-# Staging/prototype deployment — remove before production launch on the real domain.
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://www.thedalycreative.com/sitemap.xml

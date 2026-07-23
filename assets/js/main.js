@@ -41,8 +41,8 @@
     revealed.forEach((el) => io.observe(el));
   }
 
-  /* ----- services subnav scroll-spy ----- */
-  const subnavLinks = document.querySelectorAll('.subnav a[href^="#"]');
+  /* ----- in-page subnav scroll-spy (services + work category nav) ----- */
+  const subnavLinks = document.querySelectorAll('.subnav a[href^="#"], .cat-nav a[href^="#"]');
   if (subnavLinks.length && 'IntersectionObserver' in window) {
     const map = new Map();
     subnavLinks.forEach((link) => {
