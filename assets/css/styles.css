@@ -335,18 +335,42 @@ a:hover { color: var(--cerise); }
 .icon-cluster { display: block; position: relative; width: 56px; height: 38px; margin-bottom: 16px; }
 .icon-cluster i { position: absolute; top: 0; width: 34px; height: 34px; border-radius: 50%; mix-blend-mode: multiply; opacity: 0.9; }
 
-/* project cards */
-.project-card { display: flex; flex-direction: column; overflow: hidden; padding: 0; }
-.project-card img { aspect-ratio: 16 / 10; object-fit: cover; object-position: top; width: 100%; background: #EFEAF5; }
+/* project cards — a defined edge and lift, so pale screenshots (framers,
+   dora health) don't dissolve into a light section background */
+.project-card, .project-mini {
+  display: flex; flex-direction: column; overflow: hidden; padding: 0;
+  box-shadow:
+    inset 0 0 0 1px rgba(42, 30, 63, 0.12),
+    0 2px 4px rgba(42, 30, 63, 0.05),
+    0 14px 30px -16px rgba(42, 30, 63, 0.24);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.project-card:hover, .project-mini:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    inset 0 0 0 1px rgba(117, 80, 149, 0.4),
+    0 20px 42px -16px rgba(42, 30, 63, 0.34);
+}
+.project-card img, .project-mini img {
+  aspect-ratio: 16 / 10; object-fit: cover; object-position: top; width: 100%;
+  background: #EFEAF5;
+  border-bottom: 1px solid rgba(42, 30, 63, 0.14); /* separates white screenshots from white card */
+}
 .project-card .project-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
 .project-card .project-body .card-link { margin-top: auto; padding-top: 12px; }
 
 /* compact card for the long-tail lists */
-.project-mini { padding: 0; overflow: hidden; }
-.project-mini img { aspect-ratio: 16 / 10; object-fit: cover; object-position: top; width: 100%; background: #EFEAF5; }
 .project-mini .project-body { padding: 16px 18px; }
 .project-mini h3 { font-size: 1.05rem; }
 .project-mini p { font-size: 0.88rem; margin-top: 4px; }
+
+/* sub-heading inside a category, for grouping like work by type */
+.subhead {
+  display: flex; align-items: center; gap: 14px; margin: 40px 0 18px;
+  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink-soft);
+}
+.subhead::after { content: ""; flex: 1; height: 1px; background: rgba(42, 30, 63, 0.14); }
+.subhead:first-of-type { margin-top: 0; }
 
 /* featured case study — device breakdown */
 .case-study { background: var(--cy-plum); color: #fff; border-radius: var(--r-card); overflow: hidden; }
@@ -653,4 +677,38 @@ a:hover { color: var(--cerise); }
 @media (max-width: 700px) {
   .hero .btn-row .btn { flex: 1 1 auto; }
   .op-art { min-height: 220px; }
+
+  /* ---- compact portfolio on mobile ----
+     Two-up thumbnails instead of one, so every visual survives but the page
+     stops being a marathon. Opt-in via .grid-compact; other single-column
+     grids (pricing, values, process) keep their full-width stacking. */
+  .grid-2.grid-compact, .grid-3.grid-compact { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .grid-compact .project-body { padding: 12px 13px 14px; }
+  .grid-compact .kicker { font-size: 0.6rem; margin-bottom: 4px; gap: 6px; }
+  .grid-compact .kicker::before { width: 14px; }
+  .grid-compact h3 { font-size: 0.95rem; line-height: 1.2; }
+  .grid-compact p {
+    font-size: 0.78rem; line-height: 1.42; margin-top: 5px;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .grid-compact .tag-row { gap: 4px; margin-top: 8px; }
+  .grid-compact .tag { font-size: 0.6rem; padding: 2px 8px; }
+  .grid-compact .card-link { font-size: 0.78rem; padding-top: 9px; }
+  .grid-compact .project-card img, .grid-compact .project-mini img { aspect-ratio: 4 / 3; }
+
+  /* tighter rhythm between sections */
+  .section { padding-block: clamp(34px, 7vw, 52px); }
+  .section-head { margin-bottom: 20px; }
+  .count-chip { font-size: 0.7rem; padding: 2px 9px; }
+
+  /* the two phone views are very tall at 9:16 — crop shorter, keep them legible */
+  .device-phone img { aspect-ratio: 4 / 5; }
+  .device-grid { gap: 12px; }
+  .device { padding: 12px; }
+  .device p { font-size: 0.82rem; }
+  .tv-mount { padding-inline: 16px; }
+
+  /* logo wall: more per row, less scroll */
+  .logo-wall { grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)) !important; gap: 12px !important; }
+  .logo-wall img { max-height: 38px !important; }
 }
