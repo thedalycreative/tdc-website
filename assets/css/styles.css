@@ -355,7 +355,67 @@ a:hover { color: var(--cerise); }
 .case-study .case-head p { color: var(--cy-lilac); }
 .case-study .kicker { color: var(--cy-lilac); }
 .case-study .kicker::before { background: var(--marigold); }
-.device-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; padding: 0 clamp(26px, 4vw, 44px) clamp(26px, 4vw, 44px); }
+/* --- wall-mounted TV frame: the lobby board's real-world context --- */
+.tv-mount { padding: 0 clamp(26px, 4vw, 44px) clamp(24px, 3vw, 34px); }
+.tv-frame {
+  position: relative; border-radius: 16px; padding: clamp(10px, 1.2vw, 16px);
+  background: linear-gradient(180deg, #34323A 0%, #1B1A1F 55%, #121116 100%);
+  box-shadow:
+    0 50px 80px -34px rgba(0, 0, 0, 0.75),   /* cast onto the wall */
+    0 8px 0 -2px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+.tv-screen { position: relative; border-radius: 5px; overflow: hidden; background: #000; }
+.tv-screen img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; }
+/* screen glare */
+.tv-screen::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(104deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0.03) 34%, rgba(255, 255, 255, 0) 56%);
+}
+.tv-led {
+  position: absolute; left: 50%; bottom: 4px; transform: translateX(-50%);
+  width: 6px; height: 6px; border-radius: 50%; background: #56E08B; box-shadow: 0 0 9px #56E08B;
+}
+.tv-caption {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  margin-top: 16px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--marigold); text-align: center;
+}
+.tv-caption::before, .tv-caption::after { content: ""; width: 26px; height: 2px; background: rgba(255, 255, 255, 0.28); }
+
+/* --- vertical carousel (admin panel tabs) --- */
+.carousel { display: flex; flex-direction: column; height: 100%; }
+.carousel-viewport {
+  position: relative; border-radius: 10px; overflow: hidden; background: #0E0A12;
+  aspect-ratio: 16 / 10;
+  overflow-y: auto; scroll-snap-type: y mandatory; scrollbar-width: none;
+}
+.carousel-viewport::-webkit-scrollbar { display: none; }
+.carousel-track { list-style: none; margin: 0; padding: 0; }
+/* aspect-ratio, not height:100% — the track is auto-height, so a percentage
+   height is circular and leaves the next slide peeking in */
+.carousel-slide { position: relative; aspect-ratio: 16 / 10; scroll-snap-align: start; scroll-snap-stop: always; }
+.carousel-slide img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
+.carousel-slide .slide-tag {
+  position: absolute; left: 10px; bottom: 10px;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  background: rgba(18, 10, 24, 0.86); color: #fff; padding: 5px 11px; border-radius: var(--r-pill);
+  backdrop-filter: blur(4px);
+}
+.carousel-ui { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+.carousel-ui button {
+  flex: none; width: 34px; height: 34px; border-radius: 50%; cursor: pointer;
+  background: rgba(255, 255, 255, 0.12); color: #fff; font-size: 0.95rem; line-height: 1;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  transition: background 0.15s ease;
+}
+.carousel-ui button:hover { background: rgba(255, 255, 255, 0.26); }
+.carousel-status { font-size: 0.78rem; font-weight: 600; color: var(--cy-lilac); flex: 1; text-align: center; }
+.carousel-dots { display: flex; justify-content: center; gap: 6px; margin-top: 10px; }
+.carousel-dots i { width: 6px; height: 6px; border-radius: 50%; background: rgba(255, 255, 255, 0.28); transition: background 0.2s ease, transform 0.2s ease; }
+.carousel-dots i.on { background: var(--marigold); transform: scale(1.4); }
+
+.device-grid { display: grid; grid-template-columns: 1.7fr 1fr 1fr; gap: 18px; padding: 0 clamp(26px, 4vw, 44px) clamp(26px, 4vw, 44px); align-items: start; }
 .device {
   background: rgba(255, 255, 255, 0.07); border-radius: 16px; padding: 16px;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
@@ -373,7 +433,8 @@ a:hover { color: var(--cerise); }
 .device-tv img { aspect-ratio: 16 / 9; object-fit: cover; object-position: top; }
 .device-tablet img { aspect-ratio: 4 / 5; object-fit: cover; object-position: top; }
 .device-phone img { aspect-ratio: 9 / 16; object-fit: cover; object-position: top; }
-@media (max-width: 820px) { .device-grid { grid-template-columns: 1fr; } }
+@media (max-width: 980px) { .device-grid { grid-template-columns: 1fr 1fr; } .device-admin { grid-column: 1 / -1; } }
+@media (max-width: 700px) { .device-grid { grid-template-columns: 1fr; } .device-admin { grid-column: auto; } }
 
 /* work page category nav */
 .cat-nav { position: sticky; top: 69px; z-index: 90; background: rgba(255, 248, 239, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(42, 30, 63, 0.09); overflow-x: auto; }

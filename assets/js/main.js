@@ -61,6 +61,78 @@
     map.forEach((_link, section) => spy.observe(section));
   }
 
+  /* ----- vertical carousel (admin panel tabs) -----
+     Scroll-snap does the moving; JS only drives the controls, the live status
+     and auto-advance. Auto-advance stays off under reduced-motion and pauses
+     on hover/focus or any manual interaction. */
+  document.querySelectorAll('[data-carousel]').forEach((root) => {
+    const viewport = root.querySelector('.carousel-viewport');
+    const slides = [...root.querySelectorAll('.carousel-slide')];
+    const status = root.querySelector('[data-carousel-status]');
+    const dotsBox = root.querySelector('[data-carousel-dots]');
+    if (!viewport || !slides.length) return;
+
+    const labelFor = (i) => slides[i].querySelector('.slide-tag')?.textContent.trim() || `Slide ${i + 1}`;
+    let index = 0;
+    let paused = false;
+
+    const dots = slides.map((_, i) => {
+      const d = document.createElement('i');
+      if (dotsBox) dotsBox.appendChild(d);
+      return d;
+    });
+
+    const render = () => {
+      if (status) status.textContent = `${labelFor(index)} · ${index + 1} of ${slides.length}`;
+      dots.forEach((d, i) => d.classList.toggle('on', i === index));
+    };
+
+    // goTo only moves the viewport. The IntersectionObserver below owns the
+    // displayed state — otherwise both write `index` and the label can read a
+    // slide ahead of the one actually on screen mid-scroll.
+    const hasIO = 'IntersectionObserver' in window;
+    const goTo = (i, smooth = true) => {
+      const target = (i + slides.length) % slides.length;
+      viewport.scrollTo({ top: slides[target].offsetTop, behavior: smooth && !reduceMotion ? 'smooth' : 'auto' });
+      if (!hasIO) { index = target; render(); }
+    };
+
+    root.querySelector('[data-carousel-prev]')?.addEventListener('click', () => { paused = true; goTo(index - 1); });
+    root.querySelector('[data-carousel-next]')?.addEventListener('click', () => { paused = true; goTo(index + 1); });
+
+    viewport.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') { e.preventDefault(); paused = true; goTo(index + 1); }
+      if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') { e.preventDefault(); paused = true; goTo(index - 1); }
+    });
+
+    // sole owner of the displayed state — also keeps the label honest when the
+    // user swipes or scrolls the viewport directly
+    if (hasIO) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const i = slides.indexOf(entry.target);
+            if (i > -1 && i !== index) { index = i; render(); }
+          }
+        });
+      }, { root: viewport, threshold: 0.6 });
+      slides.forEach((s) => io.observe(s));
+    }
+
+    ['pointerenter', 'focusin', 'pointerdown'].forEach((ev) => root.addEventListener(ev, () => { paused = true; }));
+    root.addEventListener('pointerleave', () => { paused = false; });
+
+    render();
+
+    if (!reduceMotion) {
+      setInterval(() => {
+        if (paused || document.hidden) return;
+        if (!viewport.getBoundingClientRect().height) return;
+        goTo(index + 1);
+      }, 3800);
+    }
+  });
+
   /* ----- contact form submit state ----- */
   const form = document.querySelector('form[data-enhance]');
   if (form) {

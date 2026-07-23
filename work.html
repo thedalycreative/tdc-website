@@ -80,25 +80,63 @@
             <a class="btn btn-primary btn-arrow" href="https://www.perth-eqc.xyz" rel="noopener">Visit the dashboard<span class="visually-hidden"> (opens external site)</span></a>
           </div>
         </div>
-        <div class="device-grid">
-          <div class="device device-tv">
-            <img src="/assets/img/portfolio/eqc-welcome-tv.png" alt="EQC welcome board on a wall-mounted screen: room allocations, campus map, news ticker and upcoming events" loading="lazy">
-            <span class="device-label">Wall-mounted TV · fixed 16:9</span>
-            <h3>Lobby welcome board</h3>
-            <p>Built for one fixed screen in the lobby — no scrolling, no interaction. Everything sits in a single 1080p frame and stays readable from across the room: room allocations, campus map, live clock, news ticker and a QR code to the mobile version.</p>
+        <!-- the lobby board, in the fixed wall-mounted screen it was built for -->
+        <div class="tv-mount">
+          <figure class="tv-frame reveal">
+            <div class="tv-screen">
+              <img src="/assets/img/portfolio/eqc-welcome-tv.png" alt="EQC lobby welcome board: room allocations down the left, campus map, photo carousel, upcoming events, live clock and a rolling news ticker" loading="lazy">
+              <span class="tv-led" aria-hidden="true"></span>
+            </div>
+            <figcaption class="tv-caption">Wall-mounted in the campus lobby · fixed 1920 × 1080</figcaption>
+          </figure>
+          <div style="max-width:74ch; margin:22px auto 0; text-align:center;">
+            <h3 style="font-size:var(--step-2);">Lobby welcome board</h3>
+            <p style="color:var(--cy-lilac); margin:8px auto 0;">Designed for one screen that never moves and nobody touches. Everything lives in a single 1080p frame and stays legible from across the room — room allocations, campus map, live clock, rolling news ticker, photo carousel and a QR code that hands the visitor the mobile version.</p>
           </div>
-          <div class="device device-tablet">
-            <img src="/assets/img/portfolio/eqc-admin.png" alt="EQC admin panel login screen shown at tablet width" loading="lazy">
+        </div>
+
+        <div class="device-grid">
+
+          <!-- admin panel: vertical carousel through the tabs -->
+          <div class="device device-admin">
+            <div class="carousel" data-carousel>
+              <div class="carousel-viewport" tabindex="0" role="group" aria-roledescription="carousel" aria-label="Admin panel tabs">
+                <ul class="carousel-track">
+                  <li class="carousel-slide"><img src="/assets/img/portfolio/eqc-admin-rooms.png" alt="Admin panel: Manage Room Allocations, a table of rooms with trainer, status, course, intake and topic" loading="lazy"><span class="slide-tag">Rooms</span></li>
+                  <li class="carousel-slide"><img src="/assets/img/portfolio/eqc-admin-events.png" alt="Admin panel: Manage Events, adding upcoming events to the lobby board" loading="lazy"><span class="slide-tag">Events</span></li>
+                  <li class="carousel-slide"><img src="/assets/img/portfolio/eqc-admin-alerts.png" alt="Admin panel: Manage Alerts, scrolling announcements with colour and speed controls" loading="lazy"><span class="slide-tag">Alerts</span></li>
+                  <li class="carousel-slide"><img src="/assets/img/portfolio/eqc-admin-carousel.png" alt="Admin panel: Campus Life Carousel, drag-to-reorder campus photos" loading="lazy"><span class="slide-tag">Carousel</span></li>
+                  <li class="carousel-slide"><img src="/assets/img/portfolio/eqc-admin-intakes.png" alt="Admin panel: Intake Management, adding intakes for the room dropdowns" loading="lazy"><span class="slide-tag">Intakes</span></li>
+                  <li class="carousel-slide"><img src="/assets/img/portfolio/eqc-admin-rss.png" alt="Admin panel: RSS Feeds and ticker controls with feed selection and speed settings" loading="lazy"><span class="slide-tag">RSS feeds</span></li>
+                  <li class="carousel-slide"><img src="/assets/img/portfolio/eqc-admin-settings.png" alt="Admin panel: Global Settings for carousel timing and daily reset" loading="lazy"><span class="slide-tag">Settings</span></li>
+                </ul>
+              </div>
+              <div class="carousel-ui">
+                <button type="button" data-carousel-prev aria-label="Previous admin tab">&uarr;</button>
+                <p class="carousel-status" data-carousel-status aria-live="polite">Rooms · 1 of 7</p>
+                <button type="button" data-carousel-next aria-label="Next admin tab">&darr;</button>
+              </div>
+              <div class="carousel-dots" data-carousel-dots aria-hidden="true"></div>
+            </div>
             <span class="device-label">Responsive · any device</span>
             <h3>Admin panel</h3>
-            <p>Fully responsive, because trainers open it wherever they are — laptop at the desk, iPad in the corridor, phone between classes. Admins sign in with a universal password; trainers get their own.</p>
+            <p>Nine tabs behind a login, fully responsive because trainers open it wherever they are — laptop at the desk, iPad in the corridor, phone between classes. Rooms, events, alerts, the photo carousel, intakes, RSS ticker and global settings all write straight to the lobby board.</p>
           </div>
+
+          <div class="device device-phone">
+            <img src="/assets/img/portfolio/eqc-trainer-signon.png" alt="Trainer sign-on page on a phone: trainer, room, course, intake and today's topic, with a Sign On and Update Board button" loading="lazy">
+            <span class="device-label">Smartphone-first</span>
+            <h3>Trainer sign-on</h3>
+            <p>The bit that ties it together. A trainer signs on from their phone at the classroom door — name, room, course, intake, today's topic — and the lobby board updates in real time.</p>
+          </div>
+
           <div class="device device-phone">
             <img src="/assets/img/portfolio/eqc-mobile.png" alt="EQC campus companion on a phone: address, contacts, room availability and events with a bottom tab bar" loading="lazy">
             <span class="device-label">Smartphone-first</span>
             <h3>Campus companion</h3>
-            <p>The phone view students and trainers actually carry. Thumb-reachable bottom tabs, room availability, maps, emergency info and contacts — designed for a phone first, not shrunk down to one.</p>
+            <p>The phone view students and visitors actually carry, reached by scanning the QR on the board. Thumb-reachable bottom tabs, room availability, maps, emergency info and contacts.</p>
           </div>
+
         </div>
       </article>
     </div>
@@ -368,7 +406,7 @@
     <div class="wrap">
       <div class="section-head">
         <p class="kicker">Category 04</p>
-        <h2 id="interactive-title">Games &amp; interactive<span class="count-chip">5 projects</span></h2>
+        <h2 id="interactive-title">Games &amp; interactive<span class="count-chip">6 projects</span></h2>
         <p>Where the experiments live. Built fast, usually for a class or a celebration — and genuinely useful for pressure-testing an idea before it goes near client work.</p>
       </div>
       <div class="grid-3">
@@ -379,6 +417,15 @@
             <h3>Scwerdiality</h3>
             <p>An Aussie word-search game with a timer, scoring and a very red grid.</p>
             <a class="card-link" href="https://skwerdiality-game.vercel.app" rel="noopener">Play<span class="visually-hidden"> Scwerdiality (opens external site)</span> &rarr;</a>
+          </div>
+        </article>
+
+        <article class="card project-mini reveal">
+          <img src="/assets/img/portfolio/see-you-next-tuesday.png" alt="See You Next Tuesday party game join screen with a room code field" loading="lazy">
+          <div class="project-body">
+            <h3>See You Next Tuesday</h3>
+            <p>A bluffing party game with a big-screen host mode and phone join codes — spot the truth, fool your mates.</p>
+            <a class="card-link" href="https://see-you-next-tuesday-six.vercel.app" rel="noopener">Play<span class="visually-hidden"> See You Next Tuesday (opens external site)</span> &rarr;</a>
           </div>
         </article>
 
