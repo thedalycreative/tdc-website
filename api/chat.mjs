@@ -17,7 +17,7 @@ const json = (body, status = 200) =>
     headers: { 'content-type': 'application/json', 'cache-control': 'no-store' },
   });
 
-const clean = (s, n = MAX_CHARS) => String(s ?? '').replace(/[\u0000-\u001f\u007f]/g, ' ').trim().slice(0, n);
+const clean = (s, n = MAX_CHARS) => String(s ?? '').replace(/[\u0000-\u0008\u000b-\u001f\u007f]/g, ' ').trim().slice(0, n);
 
 async function callModel(messages, token, withTools) {
   for (let i = preferred; i < MODELS.length; i++) {
