@@ -150,6 +150,19 @@
     });
   }
 
+  /* ----- chat assistant: loaded after the page settles, so it never slows first paint ----- */
+  const loadChat = () => {
+    if (document.querySelector('script[data-tdc-chat]')) return;
+    const css = document.createElement('link');
+    css.rel = 'stylesheet'; css.href = '/assets/css/chat.css';
+    const js = document.createElement('script');
+    js.src = '/assets/js/chat.js'; js.defer = true; js.dataset.tdcChat = '';
+    css.onload = () => document.body.append(js); // widget appears already styled
+    document.head.append(css);
+  };
+  if ('requestIdleCallback' in window) requestIdleCallback(loadChat, { timeout: 2500 });
+  else setTimeout(loadChat, 1200);
+
   /* ----- footer year ----- */
   const year = document.querySelector('[data-year]');
   if (year) year.textContent = String(new Date().getFullYear());
