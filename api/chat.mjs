@@ -4,7 +4,9 @@
 import { SYSTEM_PROMPT, LEAD_TOOL } from './_knowledge.mjs';
 
 const GATEWAY_URL = 'https://ai-gateway.vercel.sh/v1/chat/completions';
-const MODEL = process.env.CHAT_MODEL || 'anthropic/claude-haiku-5.5';
+// Tried in order: if a model isn't available on the current Gateway plan (403), the next is used.
+const MODELS = (process.env.CHAT_MODELS || 'anthropic/claude-haiku-5.5,anthropic/claude-haiku-4.5').split(',').map((m) => m.trim()).filter(Boolean);
+let preferred = 0; // remembered per warm instance
 const MAX_MESSAGES = 30;      // whole conversation, both sides
 const MAX_CHARS = 1500;       // per message
 const ALLOWED_ORIGIN = /^https:\/\/((www\.)?thedalycreative\.(com|net|xyz|info|shop|store)|tdc-website-v27[a-z0-9-]*\.vercel\.app)$|^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/;
@@ -18,23 +20,31 @@ const json = (body, status = 200) =>
 const clean = (s, n = MAX_CHARS) => String(s ?? '').replace(/[\u0000-\u001f\u007f]/g, ' ').trim().slice(0, n);
 
 async function callModel(messages, token, withTools) {
-  const res = await fetch(GATEWAY_URL, {
+  for (let i = preferred; i < MODELS.length; i++) {
+    const res = await requestModel(MODELS[i], messages, token, withTools);
+    if (res.status === 403 && i < MODELS.length - 1) { preferred = i + 1; await res.text(); continue; }
+    if (!res.ok) {
+      const detail = await res.text();
+      throw new Error(`Gateway ${res.status} (${MODELS[i]}): ${detail.slice(0, 300)}`);
+    }
+    const data = await res.json();
+    return data.choices?.[0]?.message ?? {};
+  }
+  throw new Error('No model available');
+}
+
+function requestModel(model, messages, token, withTools) {
+  return fetch(GATEWAY_URL, {
     method: 'POST',
     headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json' },
     body: JSON.stringify({
-      model: MODEL,
+      model,
       messages,
       max_tokens: 600,
       temperature: 0.5,
       ...(withTools ? { tools: [LEAD_TOOL], tool_choice: 'auto' } : {}),
     }),
   });
-  if (!res.ok) {
-    const detail = await res.text();
-    throw new Error(`Gateway ${res.status}: ${detail.slice(0, 300)}`);
-  }
-  const data = await res.json();
-  return data.choices?.[0]?.message ?? {};
 }
 
 export async function POST(request) {
@@ -102,5 +112,5 @@ export async function POST(request) {
 }
 
 export function GET() {
-  return json({ ok: true, model: MODEL });
+  return json({ ok: true, models: MODELS });
 }
