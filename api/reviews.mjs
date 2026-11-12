@@ -8,6 +8,10 @@
 //                         business is hard to find via the Place ID Finder
 //                         (e.g. Google's "Daly" → "Daily" autocorrect quirk).
 //   GOOGLE_PLACES_API_KEY  — always required.
+//   GOOGLE_PLACE_CID    — optional. The listing's Maps CID; defaults to TDC's.
+//                         Text-search results are only accepted if their
+//                         googleMapsUri carries this CID, so a similarly
+//                         named business can never be shown by mistake.
 //
 // Response:
 //   { rating, total, reviews: [{ author, avatar, profileUri, rating, text, relativeTime, lang }], fetchedAt }
@@ -15,7 +19,8 @@
 const PLACE_DETAILS_URL = (id) => `https://places.googleapis.com/v1/places/${encodeURIComponent(id)}`;
 const SEARCH_TEXT_URL = 'https://places.googleapis.com/v1/places:searchText';
 const DETAILS_FIELD_MASK = 'rating,userRatingCount,reviews';
-const SEARCH_FIELD_MASK = 'places.id,places.rating,places.userRatingCount,places.reviews';
+const SEARCH_FIELD_MASK = 'places.id,places.googleMapsUri,places.rating,places.userRatingCount,places.reviews';
+const DEFAULT_CID = '3633235585205427591'; // The Daly Creative (matches the footer review link)
 const CACHE_TTL_MS = 6 * 60 * 60 * 1000; // 6 hours in warm instance memory
 const MIN_STARS = 4;                     // hide 1–3 star reviews
 const MAX_REVIEWS = 5;                   // API returns at most 5
@@ -65,7 +70,7 @@ async function fetchByPlaceId(placeId, apiKey) {
   return { place: await res.json() };
 }
 
-async function fetchByQuery(query, apiKey) {
+async function fetchByQuery(query, apiKey, cid) {
   const res = await fetch(SEARCH_TEXT_URL, {
     method: 'POST',
     headers: {
@@ -73,12 +78,18 @@ async function fetchByQuery(query, apiKey) {
       'X-Goog-FieldMask': SEARCH_FIELD_MASK,
       'content-type': 'application/json',
     },
-    body: JSON.stringify({ textQuery: query, maxResultCount: 1 }),
+    body: JSON.stringify({ textQuery: query, maxResultCount: 10 }),
   });
   if (!res.ok) return { error: true, status: res.status, detail: (await res.text()).slice(0, 300) };
   const resp = await res.json();
-  const place = Array.isArray(resp.places) ? resp.places[0] : null;
-  if (!place) return { error: true, status: 404, detail: 'No matching place for GOOGLE_PLACE_QUERY' };
+  const places = Array.isArray(resp.places) ? resp.places : [];
+  // Only accept the result whose Maps link carries our CID. Never fall back to "first result".
+  const place = places.find((p) => new RegExp(`[?&]cid=${cid}(\\D|$)`).test(p.googleMapsUri || ''));
+  if (!place) {
+    console.warn('[reviews] no result matched CID', cid, places.map((p) => p.googleMapsUri));
+    return { error: true, status: 404, detail: 'No result matched GOOGLE_PLACE_CID for GOOGLE_PLACE_QUERY' };
+  }
+  console.info('[reviews] matched place id', place.id, '(set GOOGLE_PLACE_ID to this to skip search)');
   return { place };
 }
 
@@ -89,6 +100,7 @@ export async function GET(request) {
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
   const placeId = process.env.GOOGLE_PLACE_ID;
   const placeQuery = process.env.GOOGLE_PLACE_QUERY;
+  const placeCid = (process.env.GOOGLE_PLACE_CID || DEFAULT_CID).trim();
   if (!apiKey || (!placeId && !placeQuery)) return json({ error: 'Reviews are not configured yet.' }, 503);
 
   const now = Date.now();
@@ -98,7 +110,7 @@ export async function GET(request) {
 
   try {
     // Prefer explicit Place ID; fall back to text search by query.
-    const result = placeId ? await fetchByPlaceId(placeId, apiKey) : await fetchByQuery(placeQuery, apiKey);
+    const result = placeId ? await fetchByPlaceId(placeId, apiKey) : await fetchByQuery(placeQuery, apiKey, placeCid);
 
     if (result.error) {
       // Fall back to stale cache if we have one — better than a broken section
