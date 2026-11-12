@@ -13,10 +13,10 @@
   gap: 14px;
   flex-wrap: wrap;
   padding: 16px 20px;
-  background: var(--cream);
+  background: #fff;
   border-radius: var(--r-card);
   margin-bottom: 20px;
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-card);
 }
 .rv-summary-score {
   font-family: var(--font-display);
