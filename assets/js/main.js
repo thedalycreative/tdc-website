@@ -163,6 +163,21 @@
   if ('requestIdleCallback' in window) requestIdleCallback(loadChat, { timeout: 2500 });
   else setTimeout(loadChat, 1200);
 
+  /* ----- google reviews widget: only on pages with a mount element ----- */
+  if (document.getElementById('tdc-reviews')) {
+    const loadReviews = () => {
+      if (document.querySelector('script[data-tdc-reviews]')) return;
+      const css = document.createElement('link');
+      css.rel = 'stylesheet'; css.href = '/assets/css/reviews.css';
+      const js = document.createElement('script');
+      js.src = '/assets/js/reviews.js'; js.defer = true; js.dataset.tdcReviews = '';
+      css.onload = () => document.body.append(js);
+      document.head.append(css);
+    };
+    if ('requestIdleCallback' in window) requestIdleCallback(loadReviews, { timeout: 2500 });
+    else setTimeout(loadReviews, 1200);
+  }
+
   /* ----- footer year ----- */
   const year = document.querySelector('[data-year]');
   if (year) year.textContent = String(new Date().getFullYear());

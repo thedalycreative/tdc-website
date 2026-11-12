@@ -1,0 +1,161 @@
+/* The Daly Creative — Google reviews widget.
+   Uses site tokens from styles.css. Scoped under #tdc-reviews. */
+
+#tdc-reviews {
+  --rv-star: #FFB300;
+  --rv-star-empty: rgba(42, 30, 63, 0.14);
+}
+
+/* ---- Summary row ---- */
+.rv-summary {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 16px 20px;
+  background: var(--cream);
+  border-radius: var(--r-card);
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-soft);
+}
+.rv-summary-score {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--step-2);
+  line-height: 1;
+  color: var(--ink);
+}
+.rv-summary-stars {
+  display: inline-flex;
+  gap: 2px;
+}
+.rv-summary-stars .rv-star { width: 20px; height: 20px; }
+.rv-summary-count {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-right: auto;
+}
+.rv-summary-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: var(--r-pill);
+  background: var(--ink);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.rv-summary-cta:hover { transform: translateY(-1px); background: var(--purple-deep); }
+.rv-summary-cta::after { content: '→'; }
+
+/* ---- Grid ---- */
+.rv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.rv-grid-1 { grid-template-columns: minmax(0, 640px); justify-content: center; }
+.rv-grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); max-width: 820px; margin: 0 auto; }
+
+/* ---- Card ---- */
+.rv-card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+.rv-stars {
+  display: inline-flex;
+  gap: 2px;
+  margin-bottom: 14px;
+}
+.rv-star {
+  width: 16px;
+  height: 16px;
+  fill: var(--rv-star-empty);
+}
+.rv-star-full { fill: var(--rv-star); }
+
+.rv-text {
+  margin: 0 0 18px;
+  flex: 1;
+}
+.rv-text p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--ink);
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.rv-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(42, 30, 63, 0.08);
+  margin: 0;
+}
+.rv-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.rv-avatar-fallback {
+  background: var(--lilac);
+  color: var(--cy-plum);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+.rv-author-block {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.rv-author {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.rv-time {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-top: 1px;
+}
+
+/* ---- Empty state ---- */
+.rv-empty {
+  text-align: center;
+  padding: 28px 20px;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+.rv-empty a {
+  color: var(--cerise-deep);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 640px) {
+  .rv-summary {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+  .rv-summary-count { margin-right: 0; }
+  .rv-summary-cta { align-self: stretch; justify-content: center; }
+  .rv-grid, .rv-grid-1, .rv-grid-2 { grid-template-columns: 1fr; max-width: 100%; }
+}
