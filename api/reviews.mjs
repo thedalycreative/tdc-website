@@ -20,7 +20,7 @@ const PLACE_DETAILS_URL = (id) => `https://places.googleapis.com/v1/places/${enc
 const SEARCH_TEXT_URL = 'https://places.googleapis.com/v1/places:searchText';
 const DETAILS_FIELD_MASK = 'rating,userRatingCount,reviews';
 const SEARCH_FIELD_MASK = 'places.id,places.googleMapsUri,places.rating,places.userRatingCount,places.reviews';
-const DEFAULT_CID = '3633235585205427591'; // The Daly Creative (matches the footer review link)
+const DEFAULT_CID = '11023459336690584245'; // The Daly Creative (matches the footer review link)
 const CACHE_TTL_MS = 6 * 60 * 60 * 1000; // 6 hours in warm instance memory
 const MIN_STARS = 4;                     // hide 1–3 star reviews
 const MAX_REVIEWS = 5;                   // API returns at most 5
