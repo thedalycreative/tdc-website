@@ -40,7 +40,7 @@ function requestModel(model, messages, token, withTools) {
     body: JSON.stringify({
       model,
       messages,
-      max_tokens: 600,
+      max_tokens: 1024,
       temperature: 0.5,
       ...(withTools ? { tools: [LEAD_TOOL], tool_choice: 'auto' } : {}),
     }),
@@ -103,7 +103,7 @@ export async function POST(request) {
       msg = await callModel(convo, token, false);
     }
 
-    const reply = clean(msg.content, 4000) || "Sorry, I lost my train of thought there — could you say that again?";
+    const reply = clean(msg.content, 4000) || "Sorry, I lost my train of thought there. Could you say that again?";
     return json({ reply, lead });
   } catch (err) {
     console.error('[chat]', err.message);

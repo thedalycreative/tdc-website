@@ -124,6 +124,22 @@
   closeBtn.addEventListener('click', close);
   panel.addEventListener('keydown', (e) => { if (e.key === 'Escape') { e.stopPropagation(); close(); } });
 
+  /* ----- mobile keyboard handling -----
+     On iOS/Android the soft keyboard doesn't resize the layout viewport, so
+     100dvh keeps the panel full-screen and the input hides behind the keyboard.
+     We track the visualViewport and expose its height as --tdc-vh for CSS.    */
+  const syncViewport = () => {
+    const vv = window.visualViewport;
+    if (!vv) return;
+    document.documentElement.style.setProperty('--tdc-vh', vv.height + 'px');
+    if (isOpen()) scroll();
+  };
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', syncViewport);
+    window.visualViewport.addEventListener('scroll', syncViewport);
+    syncViewport();
+  }
+
   /* ----- input ----- */
   const grow = () => { input.style.height = 'auto'; input.style.height = Math.min(input.scrollHeight, 120) + 'px'; };
   input.addEventListener('input', grow);
