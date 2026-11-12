@@ -564,7 +564,7 @@ a:hover { color: var(--cerise); }
 .cta-band .btn-row { margin-top: 26px; }
 .cta-band .op { mix-blend-mode: screen; opacity: 0.5; }
 
-.site-footer { background: var(--ink); color: #CFC7DE; padding-block: 56px 104px; font-size: 0.92rem; }
+.site-footer { background: var(--ink); color: #CFC7DE; padding-block: 56px 96px; font-size: 0.92rem; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr; gap: 32px; }
 .site-footer .logo { color: var(--cream); font-size: 1.6rem; }
 .site-footer h4 { color: var(--cream); font-size: 0.95rem; margin-bottom: 12px; }
@@ -575,7 +575,7 @@ a:hover { color: var(--cerise); }
 .footer-blurb { margin-top: 12px; max-width: 34ch; }
 .footer-legal {
   margin-top: 44px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.14);
-  display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; font-size: 0.85rem;
+  display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: flex-start; font-size: 0.85rem;
 }
 .footer-dots { display: flex; gap: 6px; margin-top: 16px; }
 .footer-dots i { width: 14px; height: 14px; border-radius: 50%; }
