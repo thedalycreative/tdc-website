@@ -78,7 +78,7 @@ async function fetchByQuery(query, apiKey, cid) {
       'X-Goog-FieldMask': SEARCH_FIELD_MASK,
       'content-type': 'application/json',
     },
-    body: JSON.stringify({ textQuery: query, maxResultCount: 10 }),
+    body: JSON.stringify({ textQuery: query, maxResultCount: 10, includePureServiceAreaBusinesses: true }),
   });
   if (!res.ok) return { error: true, status: res.status, detail: (await res.text()).slice(0, 300) };
   const resp = await res.json();
@@ -91,6 +91,15 @@ async function fetchByQuery(query, apiKey, cid) {
   }
   console.info('[reviews] matched place id', place.id, '(set GOOGLE_PLACE_ID to this to skip search)');
   return { place };
+}
+
+async function fetchByQueries(queries, apiKey, cid) {
+  let last;
+  for (const q of [...new Set(queries.filter(Boolean))]) {
+    last = await fetchByQuery(q, apiKey, cid);
+    if (!last.error || last.status !== 404) return last;
+  }
+  return last;
 }
 
 export async function GET(request) {
@@ -110,7 +119,7 @@ export async function GET(request) {
 
   try {
     // Prefer explicit Place ID; fall back to text search by query.
-    const result = placeId ? await fetchByPlaceId(placeId, apiKey) : await fetchByQuery(placeQuery, apiKey, placeCid);
+    const result = placeId ? await fetchByPlaceId(placeId, apiKey) : await fetchByQueries([placeQuery, 'The Daly Creative', 'The Daly Creative Perth'], apiKey, placeCid);
 
     if (result.error) {
       // Fall back to stale cache if we have one — better than a broken section
