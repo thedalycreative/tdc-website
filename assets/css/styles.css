@@ -286,10 +286,6 @@ a:hover { color: var(--cerise); }
 .hero .lede { margin-top: 18px; color: var(--ink-soft); font-size: var(--step-1); line-height: 1.55; }
 .hero .btn-row { margin-top: 30px; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
-.hero-glow {
-  position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.35;
-  pointer-events: none; z-index: 0;
-}
 .hero-grid > * { position: relative; z-index: 1; }
 @media (max-width: 820px) {
   .hero-grid { grid-template-columns: 1fr; }
@@ -513,12 +509,12 @@ a:hover { color: var(--cerise); }
 .timeline p { margin-top: 6px; color: var(--ink-soft); font-size: 0.95rem; }
 
 /* ---------- flavoured service sections ---------- */
-.flav-ai { background: linear-gradient(135deg, #F0F4FE 0%, var(--ai-bg) 50%, #EEF1FA 100%); color: var(--ai-ink); }
+.flav-ai { background: var(--ai-bg); color: var(--ai-ink); }
 .flav-ai .kicker { color: var(--ai-grey); }
 .flav-ai .kicker::before { background: var(--ai-yellow); }
 .flav-ai h2 { color: var(--ai-blue); }
 .flav-ai .section-head p { color: var(--ai-grey); }
-.flav-ai .card { background: rgba(255, 255, 255, 0.72); backdrop-filter: blur(6px); box-shadow: inset 0 0 0 1px rgba(13, 13, 18, 0.1); }
+.flav-ai .card { background: #fff; box-shadow: inset 0 0 0 1px rgba(13, 13, 18, 0.1); }
 .flav-ai .card h3 { color: var(--ai-ink); }
 .flav-ai .card p, .flav-ai .card li { color: var(--ai-grey); }
 .flav-ai .card-link { color: var(--ai-blue); }
@@ -545,12 +541,12 @@ a:hover { color: var(--cerise); }
 .flav-cyber a { color: var(--cy-lilac); }
 .flav-cyber .check-list li::before { color: var(--marigold); }
 
-.flav-train { background: linear-gradient(135deg, #DFF2E9 0%, var(--tr-mist) 45%, #DFEAF6 100%); color: var(--tr-ink); }
+.flav-train { background: var(--tr-mist); color: var(--tr-ink); }
 .flav-train .kicker { color: #3C554D; }
 .flav-train .kicker::before { background: var(--tr-green); }
 .flav-train h2 { color: var(--tr-green); }
 .flav-train .section-head p { color: #3C554D; }
-.flav-train .card { background: rgba(255, 255, 255, 0.72); backdrop-filter: blur(6px); box-shadow: inset 0 0 0 1px rgba(18, 49, 43, 0.12); }
+.flav-train .card { background: #fff; box-shadow: inset 0 0 0 1px rgba(18, 49, 43, 0.12); }
 .flav-train .card h3 { color: var(--tr-ink); }
 .flav-train .card p, .flav-train .card li { color: #41584F; }
 .flav-train .card-link { color: var(--tr-blue); }
