@@ -20,7 +20,8 @@ const PLACE_DETAILS_URL = (id) => `https://places.googleapis.com/v1/places/${enc
 const SEARCH_TEXT_URL = 'https://places.googleapis.com/v1/places:searchText';
 const DETAILS_FIELD_MASK = 'rating,userRatingCount,reviews';
 const SEARCH_FIELD_MASK = 'places.id,places.googleMapsUri,places.rating,places.userRatingCount,places.reviews';
-const DEFAULT_CID = '11023459336690584245'; // The Daly Creative (matches the footer review link)
+const DEFAULT_CID = '11023459336690584245';
+const DEFAULT_PLACE_ID = 'ChIJsTC2N5gf6kARtcpnp9wx-5g'; // The Daly Creative, same listing as the CID above // The Daly Creative (matches the footer review link)
 const CACHE_TTL_MS = 6 * 60 * 60 * 1000; // 6 hours in warm instance memory
 const MIN_STARS = 4;                     // hide 1–3 star reviews
 const MAX_REVIEWS = 5;                   // API returns at most 5
@@ -107,7 +108,7 @@ export async function GET(request) {
   if (origin && !ALLOWED_ORIGIN.test(origin)) return json({ error: 'Forbidden' }, 403);
 
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
-  const placeId = process.env.GOOGLE_PLACE_ID;
+  const placeId = process.env.GOOGLE_PLACE_ID || DEFAULT_PLACE_ID;
   const placeQuery = process.env.GOOGLE_PLACE_QUERY;
   const placeCid = (process.env.GOOGLE_PLACE_CID || DEFAULT_CID).trim();
   if (!apiKey || (!placeId && !placeQuery)) return json({ error: 'Reviews are not configured yet.' }, 503);
