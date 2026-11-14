@@ -2,13 +2,177 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/process.html", "destination": "/services#process", "permanent": true },
-    { "source": "/cyber-security.html", "destination": "/services#security", "permanent": true },
-    { "source": "/ai-tools.html", "destination": "/services#ai", "permanent": true },
-    { "source": "/styleguide.html", "destination": "/prototype/style-tiles.html", "permanent": true },
-    { "source": "/blog-strategic-logic-beats-pretty-pixels.html", "destination": "/blog/strategic-logic-beats-pretty-pixels", "permanent": true },
-    { "source": "/blog-practical-ai-small-business.html", "destination": "/blog/practical-ai-small-business", "permanent": true },
-    { "source": "/blog-real-cost-of-a-cheap-website.html", "destination": "/blog/real-cost-of-a-cheap-website", "permanent": true },
-    { "source": "/blog-cyber-security-basics-perth-business.html", "destination": "/blog/cyber-security-basics-perth-business", "permanent": true }
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "thedalycreative.net"
+        }
+      ],
+      "destination": "https://www.thedalycreative.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.thedalycreative.net"
+        }
+      ],
+      "destination": "https://www.thedalycreative.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "thedalycreative.xyz"
+        }
+      ],
+      "destination": "https://www.thedalycreative.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.thedalycreative.xyz"
+        }
+      ],
+      "destination": "https://www.thedalycreative.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "thedalycreative.info"
+        }
+      ],
+      "destination": "https://www.thedalycreative.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.thedalycreative.info"
+        }
+      ],
+      "destination": "https://www.thedalycreative.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "thedalycreative.shop"
+        }
+      ],
+      "destination": "https://www.thedalycreative.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.thedalycreative.shop"
+        }
+      ],
+      "destination": "https://www.thedalycreative.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "thedalycreative.store"
+        }
+      ],
+      "destination": "https://www.thedalycreative.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.thedalycreative.store"
+        }
+      ],
+      "destination": "https://www.thedalycreative.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "tdc-website-v27.vercel.app"
+        }
+      ],
+      "destination": "https://www.thedalycreative.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/process.html",
+      "destination": "/services#process",
+      "permanent": true
+    },
+    {
+      "source": "/cyber-security.html",
+      "destination": "/services#security",
+      "permanent": true
+    },
+    {
+      "source": "/ai-tools.html",
+      "destination": "/services#ai",
+      "permanent": true
+    },
+    {
+      "source": "/styleguide.html",
+      "destination": "/prototype/style-tiles.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-strategic-logic-beats-pretty-pixels.html",
+      "destination": "/blog/strategic-logic-beats-pretty-pixels",
+      "permanent": true
+    },
+    {
+      "source": "/blog-practical-ai-small-business.html",
+      "destination": "/blog/practical-ai-small-business",
+      "permanent": true
+    },
+    {
+      "source": "/blog-real-cost-of-a-cheap-website.html",
+      "destination": "/blog/real-cost-of-a-cheap-website",
+      "permanent": true
+    },
+    {
+      "source": "/blog-cyber-security-basics-perth-business.html",
+      "destination": "/blog/cyber-security-basics-perth-business",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/prototype/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
   ]
 }
