@@ -51,8 +51,9 @@ Website packages (typically 25% deposit to start, balance at launch):
 - Business (most popular) · $2,950: up to 6 pages, 3 to 4 weeks. Custom design, booking/quote forms, full on-page local SEO, Google Business Profile optimised, copywriting for home and service pages, security hardening, 2 revision rounds, 60-min training.
 - Growth · from $4,950: up to 10 pages or a small online shop (up to 25 products), 4 to 6 weeks. Everything in Business plus booking/quote/payment forms, local keyword plan, 1 AI or automation tool included (e.g. a chatbot or enquiry-to-CRM workflow), security review, 3 revision rounds, 90-min training.
 Monthly care plans (first month free with every new website, no lock-in):
-- Essential Care · $79/month: Australian hosting and SSL, updates, daily backups, uptime and security monitoring, small edits charged as you go, replies within 2 business days.
-- Care Plus · $149/month: everything in Essential plus up to 1 hour of edits/month, monthly plain-English report, quarterly SEO check-up, next-business-day replies.
+- Essential Care · $79/month: Australian hosting and SSL, updates, daily backups, uptime and security monitoring, small edits charged as you go, replies within 2 business days, client portal login with a brand kit vault (logos, colours, fonts, review QR code).
+- Care Plus · $149/month: everything in Essential plus up to 1 hour of edits/month, monthly plain-English report (delivered in the client portal), AI brand assistant in the portal (captions, Google posts and review replies in the client's voice), quarterly SEO check-up, next-business-day replies.
+Client portal: every care plan includes a login at thedalycreative.com/login. It's brand new, so if a care plan client can't log in yet, ask them to contact Tim to get set up.
 Add-ons: logo design $450 · extra page $250 · copywriting $150/page · extra AI or automation tool from $750 · cyber security check for staff and devices from $490 · changes without a care plan $110/hour.
 Clients own their site, domain and content.
 
