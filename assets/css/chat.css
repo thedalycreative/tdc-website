@@ -7,25 +7,45 @@
 .tdc-chat-launcher {
   position: fixed; right: max(18px, env(safe-area-inset-right)); bottom: max(18px, env(safe-area-inset-bottom));
   z-index: 150;
-  display: inline-flex; align-items: center; gap: 10px;
-  min-height: 56px; padding: 8px 22px 8px 10px;
+  display: inline-flex; align-items: center; gap: 12px;
+  min-height: 58px; padding: 9px 24px 9px 12px;
   border: none; border-radius: var(--r-pill); cursor: pointer;
-  background: var(--purple-deep); color: #fff;
-  font: 700 1rem/1 var(--font-body);
-  box-shadow: 0 16px 34px -14px rgba(70, 32, 79, 0.75);
-  transition: transform 0.16s ease, box-shadow 0.16s ease;
+  background: var(--ink); color: var(--cream);
+  font: 700 1rem/1 var(--font-body); letter-spacing: 0.01em;
+  box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.08) inset, 0 18px 36px -14px rgba(42, 30, 63, 0.7);
+  transition: transform 0.35s cubic-bezier(.34, 1.56, .64, 1), box-shadow 0.25s ease;
+  animation: tdc-chat-in 0.6s cubic-bezier(.34, 1.56, .64, 1) 0.4s both;
 }
-.tdc-chat-launcher:hover { transform: translateY(-2px); box-shadow: 0 20px 38px -14px rgba(70, 32, 79, 0.85); }
-.tdc-chat-launcher:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.tdc-chat-launcher:hover { transform: scale(1.04); box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.12) inset, 0 22px 42px -14px rgba(42, 30, 63, 0.8); }
+.tdc-chat-launcher:focus-visible { outline: 3px solid var(--purple-deep); outline-offset: 3px; }
+@keyframes tdc-chat-in { from { opacity: 0; transform: translateY(16px) scale(.9); } to { opacity: 1; transform: none; } }
 
-/* overlapping-circle brand mark */
-.tdc-chat-mark { position: relative; width: 38px; height: 38px; flex: none; }
+/* overlapping-circle brand mark: isolated, so the colours stay bright on the dark pill
+   and only the overlap is multiplied */
+.tdc-chat-mark { position: relative; width: 48px; height: 38px; flex: none; isolation: isolate; }
 .tdc-chat-mark::before, .tdc-chat-mark::after {
-  content: ""; position: absolute; border-radius: 50%; mix-blend-mode: multiply;
+  content: ""; position: absolute; top: 2px; width: 34px; height: 34px; border-radius: 50%;
+  transition: transform 0.4s cubic-bezier(.34, 1.56, .64, 1);
 }
-.tdc-chat-mark::before { inset: 0 8px 8px 0; background: var(--marigold); }
-.tdc-chat-mark::after  { inset: 8px 0 0 8px; background: var(--cerise); }
-.tdc-chat-mark span { position: absolute; inset: 0; display: grid; place-items: center; font: 800 1.15rem/1 var(--font-display); color: #fff; z-index: 1; }
+.tdc-chat-mark::before { left: 0; background: var(--marigold); }
+.tdc-chat-mark::after  { left: 14px; background: var(--cerise); mix-blend-mode: multiply; }
+.tdc-chat-launcher:hover .tdc-chat-mark::before { transform: translateX(-3px); }
+.tdc-chat-launcher:hover .tdc-chat-mark::after  { transform: translateX(3px); }
+.tdc-chat-mark svg {
+  position: absolute; z-index: 1; left: 12px; top: 8px; width: 22px; height: 22px;
+  color: #fff; filter: drop-shadow(0 1px 1px rgba(42, 30, 63, 0.35));
+}
+/* a little live dot: the assistant is always on */
+.tdc-chat-mark i {
+  position: absolute; z-index: 2; right: -2px; top: -1px; width: 10px; height: 10px; border-radius: 50%;
+  background: #3DDC97; box-shadow: 0 0 0 2px var(--ink);
+}
+.tdc-chat-mark i::after {
+  content: ""; position: absolute; inset: 0; border-radius: 50%; background: #3DDC97;
+  animation: tdc-chat-ping 2.4s ease-out infinite;
+}
+@keyframes tdc-chat-ping { 0% { transform: scale(1); opacity: .7; } 70%, 100% { transform: scale(2.6); opacity: 0; } }
+.tdc-chat-launcher[aria-expanded="true"] .tdc-chat-mark i { display: none; }
 
 .tdc-chat-launcher[aria-expanded="true"] .tdc-chat-launch-label::after { content: " ×"; }
 
@@ -122,7 +142,7 @@
 
 @media (max-width: 520px) {
   .tdc-chat-launch-label { display: none; }
-  .tdc-chat-launcher { padding: 9px; }
+  .tdc-chat-launcher { padding: 10px 8px 10px 12px; }
   .tdc-chat-panel {
     right: 0; left: 0; bottom: 0; width: 100%;
     /* --tdc-vh is set from visualViewport.height so the panel shrinks
@@ -134,5 +154,5 @@
   body.tdc-chat-open .tdc-chat-launcher { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .tdc-chat-launcher, .tdc-typing i { transition: none; animation: none; }
+  .tdc-chat-launcher, .tdc-typing i, .tdc-chat-mark i::after, .tdc-chat-mark::before, .tdc-chat-mark::after { transition: none; animation: none; }
 }

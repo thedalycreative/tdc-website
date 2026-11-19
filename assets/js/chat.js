@@ -45,7 +45,7 @@
   };
 
   const launcher = el('button', { type: 'button', class: 'tdc-chat-launcher', 'aria-expanded': 'false', 'aria-controls': 'tdc-chat-panel' },
-    '<span class="tdc-chat-mark" aria-hidden="true"><span>?</span></span><span class="tdc-chat-launch-label">Chat with us</span><span class="tdc-sr-only"> — open chat assistant</span>');
+    '<span class="tdc-chat-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-5.1A8 8 0 1 1 21 12z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01" stroke-width="3"/></svg><i></i></span><span class="tdc-chat-launch-label">Chat with us</span><span class="tdc-sr-only">, open chat assistant</span>');
 
   const panel = el('section', { id: 'tdc-chat-panel', class: 'tdc-chat-panel', role: 'dialog', 'aria-modal': 'false', 'aria-labelledby': 'tdc-chat-title', hidden: '' });
   panel.innerHTML = `
