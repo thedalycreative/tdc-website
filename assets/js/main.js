@@ -178,6 +178,25 @@
     else setTimeout(loadReviews, 1200);
   }
 
+  /* ----- home hero: circles lean towards the pointer ----- */
+  const orbit = document.querySelector('.hero-orbit');
+  if (orbit && matchMedia('(pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const hero = orbit.closest('section') || document.body;
+    let frame = 0;
+    hero.addEventListener('pointermove', (e) => {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        const r = orbit.getBoundingClientRect();
+        const mx = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / (r.width)));
+        const my = Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height / 2)) / (r.height)));
+        orbit.style.setProperty('--mx', mx.toFixed(3));
+        orbit.style.setProperty('--my', my.toFixed(3));
+      });
+    });
+    hero.addEventListener('pointerleave', () => { orbit.style.setProperty('--mx', 0); orbit.style.setProperty('--my', 0); });
+  }
+
   /* ----- footer year ----- */
   const year = document.querySelector('[data-year]');
   if (year) year.textContent = String(new Date().getFullYear());
