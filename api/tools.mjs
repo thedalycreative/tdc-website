@@ -10,7 +10,7 @@ const GATEWAY_URL = 'https://ai-gateway.vercel.sh/v1/chat/completions';
 const MODELS = (process.env.TOOLS_MODELS || process.env.CHAT_MODELS || 'anthropic/claude-haiku-5.5,anthropic/claude-haiku-4.5')
   .split(',').map((m) => m.trim()).filter(Boolean);
 let preferred = 0;
-const ALLOWED_ORIGIN = /^https:\/\/((www\.)?thedalycreative\.(com|net|xyz|info|shop|store)|tdc-website-v27[a-z0-9-]*\.vercel\.app)$|^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/;
+const ALLOWED_ORIGIN = /^https:\/\/((www\.)?thedalycreative\.(com|net|xyz|info|shop|store)|tdc-website[a-z0-9-]*\.vercel\.app)$|^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/;
 
 // ---------- small helpers ----------
 const json = (body, status = 200) =>
