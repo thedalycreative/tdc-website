@@ -33,12 +33,11 @@
     const [q, opts] = Q[step];
     box.innerHTML = `
       <div class="quiz-progress" aria-hidden="true"><i style="width:${(step / Q.length) * 100}%"></i></div>
-      <p class="quiz-step-label">Question ${step + 1} of ${Q.length}</p>
       <h2 class="quiz-q" id="quiz-q" tabindex="-1">${T.esc(q)}</h2>
       <div class="quiz-options" role="group" aria-labelledby="quiz-q">
         ${opts.map((o, i) => `<button type="button" data-i="${i}" aria-pressed="${answers[step] === i}">${T.esc(o[0])}</button>`).join('')}
       </div>
-      <div class="quiz-nav">${step ? '<button type="button" class="btn btn-ghost" data-back>← Back</button>' : '<span></span>'}</div>`;
+      <div class="quiz-nav">${step ? '<button type="button" class="btn btn-ghost" data-back>← Back</button>' : '<span></span>'}<span class="quiz-count">${step + 1} of ${Q.length}</span></div>`;
     box.querySelectorAll('[data-i]').forEach((b) => b.addEventListener('click', () => {
       answers[step] = +b.dataset.i;
       if (step < Q.length - 1) { step++; draw(); box.querySelector('#quiz-q').focus(); } else finish();
@@ -73,13 +72,12 @@
       <div class="score-card">
         <div class="score-dial" style="--v:${r.score}; --c:var(--purple-deep);" role="img" aria-label="AI opportunity ${r.score} out of 100"><b>${r.score}<small>/100</small></b></div>
         <div>
-          <p class="quiz-step-label">AI opportunity score</p>
           <h2 style="font-size:var(--step-2);">${T.esc(r.level)}</h2>
-          <p>Rough estimate: AI and automation could win you back <strong>${r.lo} to ${r.hi} hours a week</strong>.</p>
+          <p>Your AI opportunity score is ${r.score} out of 100. Rough estimate: AI and automation could win you back <strong>${r.lo} to ${r.hi} hours a week</strong>.</p>
         </div>
       </div>
       <div class="card" style="margin-top:18px; background:var(--ai-bg); box-shadow:none;">
-        <p class="quiz-step-label">Your biggest opportunity: ${T.esc(AREAS[r.top][0])}</p>
+        <h3>Your biggest opportunity: ${T.esc(AREAS[r.top][0].toLowerCase())}</h3>
         <p style="margin-top:6px; color:var(--ink);">${T.esc(AREAS[r.top][1])}</p>
       </div>
       <div class="quiz-nav"><button type="button" class="btn btn-ghost" data-restart>↺ Retake the quiz</button></div>`;

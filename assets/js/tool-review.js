@@ -20,8 +20,7 @@
   function cards(replies) {
     return replies.map((r, i) => `
       <div class="card reply-card">
-        ${replies.length > 1 ? `<p class="quiz-step-label">Option ${i + 1}</p>` : ''}
-        <p>${T.esc(r)}</p>
+                <p>${T.esc(r)}</p>
         <div class="reply-actions"><button type="button" class="btn btn-ink btn-sm" data-copy="${i}">Copy reply</button></div>
       </div>`).join('');
   }

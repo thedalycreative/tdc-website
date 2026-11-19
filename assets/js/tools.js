@@ -69,7 +69,7 @@
       const me = { name, email };
       try {
         await sendLead({
-          _subject: `New tool lead — ${opts.tool} — ${name}`,
+          _subject: `New tool lead · ${opts.tool} · ${name}`,
           name, email, tool: opts.tool, page: location.pathname,
           ...(opts.context ? opts.context() : {}), ...extra,
         });

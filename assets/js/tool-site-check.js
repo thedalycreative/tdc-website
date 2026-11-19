@@ -21,9 +21,8 @@
       <div class="card score-card">
         <div class="score-dial" style="--v:${data.score}; --c:${colour(data.score)};" role="img" aria-label="Score ${data.score} out of 100"><b>${data.score}<small>/100</small></b></div>
         <div>
-          <p class="quiz-step-label">${T.esc(host)}</p>
           <h2>${T.esc(data.grade)}</h2>
-          <p>${issues.length ? `We found ${issues.length} thing${issues.length === 1 ? '' : 's'} to fix and ${passes.length} already done well.` : 'Every check passed. Nice work.'}</p>
+          <p><strong>${T.esc(host)}</strong>. ${issues.length ? `We found ${issues.length} thing${issues.length === 1 ? '' : 's'} to fix and ${passes.length} already done well.` : 'Every check passed. Nice work.'}</p>
         </div>
       </div>`;
     if (top.length) html += `<h3 style="margin-top:8px;">Your biggest fixes</h3><ul class="check-results">${top.map(item).join('')}</ul>`;

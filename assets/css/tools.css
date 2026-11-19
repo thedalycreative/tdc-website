@@ -94,7 +94,6 @@
 /* quiz */
 .quiz-progress { height: 8px; border-radius: 99px; background: rgba(42, 30, 63, 0.08); overflow: hidden; margin-bottom: 20px; }
 .quiz-progress i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--marigold), var(--cerise)); transition: width .3s ease; }
-.quiz-step-label { font-size: 0.8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
 .quiz-q { font-size: var(--step-2); margin: 8px 0 18px; }
 .quiz-options { display: grid; gap: 10px; }
 .quiz-options button {
@@ -104,7 +103,8 @@
 .quiz-options button:hover { box-shadow: inset 0 0 0 2px var(--purple-deep); transform: translateY(-1px); }
 .quiz-options button[aria-pressed="true"] { background: var(--ink); color: var(--cream); box-shadow: none; }
 .quiz-options button:focus-visible { outline: 3px solid var(--purple-deep); outline-offset: 2px; }
-.quiz-nav { display: flex; justify-content: space-between; margin-top: 18px; }
+.quiz-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; }
+.quiz-count { font-size: 0.9rem; color: var(--ink-soft); }
 
 .report-card h3 { font-size: var(--step-1); margin: 18px 0 6px; }
 .report-card h3:first-child { margin-top: 0; }
@@ -112,9 +112,9 @@
 .report-card li, .report-card p { color: var(--ink); font-size: 0.98rem; max-width: none; }
 
 /* hub */
+.tool-tile .portal-icon { margin-bottom: 4px; }
 .tool-tile { display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: inherit; transition: transform .18s ease; }
 .tool-tile:hover { transform: translateY(-3px); color: inherit; }
-.tool-tile .tool-emoji { font-size: 2rem; line-height: 1; }
 .tool-tile h3 { font-size: var(--step-1); }
 .tool-tile .card-link { margin-top: auto; }
 
