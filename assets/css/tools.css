@@ -112,11 +112,26 @@
 .report-card li, .report-card p { color: var(--ink); font-size: 0.98rem; max-width: none; }
 
 /* hub */
-.tool-tile .portal-icon { margin-bottom: 4px; }
 .tool-tile { display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: inherit; transition: transform .18s ease; }
 .tool-tile:hover { transform: translateY(-3px); color: inherit; }
 .tool-tile h3 { font-size: var(--step-1); }
-.tool-tile .card-link { margin-top: auto; }
+.tool-tile { overflow: hidden; padding-top: 0; }
+.tool-tile .tile-btn { margin-top: auto; }
+.tool-tile p { margin-bottom: 18px; }
+/* big overlapping circles across the top of each tile */
+.tile-art {
+  position: relative; display: block; height: 168px; margin: 0 calc(clamp(20px, 3vw, 30px) * -1) 8px;
+  color: var(--ink);
+}
+.tile-art i { position: absolute; border-radius: 50%; mix-blend-mode: multiply; opacity: 0.9; transition: transform .6s cubic-bezier(.34, 1.56, .64, 1); }
+.tile-art i:nth-child(1) { width: 136px; height: 136px; left: 22px;  top: 22px;  background: var(--t1); }
+.tile-art i:nth-child(2) { width: 108px; height: 108px; left: 124px; top: 50px;  background: var(--t2); }
+.tile-art i:nth-child(3) { width: 84px;  height: 84px;  right: 18px; top: -18px; background: var(--t3); }
+.tile-art svg { position: absolute; left: 66px; top: 66px; width: 48px; height: 48px; }
+.tool-tile:hover .tile-art i:nth-child(1) { transform: translate(6px, -6px); }
+.tool-tile:hover .tile-art i:nth-child(2) { transform: translate(-8px, -4px) scale(1.05); }
+.tool-tile:hover .tile-art i:nth-child(3) { transform: translate(-6px, 10px); }
+@media (prefers-reduced-motion: reduce) { .tile-art i { transition: none; } }
 
 .tool-cta { margin-top: 8px; background: var(--peach); box-shadow: none; }
 .tool-cta h3 { font-size: var(--step-1); }
