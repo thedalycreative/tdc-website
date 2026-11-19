@@ -113,7 +113,7 @@
 
 /* hub */
 .tool-tile { display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: inherit; transition: transform .18s ease; }
-.tool-tile:hover { transform: translateY(-3px); color: inherit; }
+.tool-tile:hover { color: inherit; }
 .tool-tile h3 { font-size: var(--step-1); }
 .tool-tile { overflow: hidden; padding-top: 0; }
 .tool-tile .tile-btn { margin-top: auto; }

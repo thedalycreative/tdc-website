@@ -197,6 +197,26 @@
     hero.addEventListener('pointerleave', () => { orbit.style.setProperty('--mx', 0); orbit.style.setProperty('--my', 0); });
   }
 
+  /* ----- clickable tiles: the whole tile opens its main link ----- */
+  const TILE_LINKS = [
+    ['.project-card, .project-mini', '.card-link'],
+    ['.pillar', '.card-link'],
+    ['.post-card', 'h2 a, h3 a'],
+  ];
+  TILE_LINKS.forEach(([tiles, linkSel]) => {
+    document.querySelectorAll(tiles).forEach((tile) => {
+      const link = tile.querySelector(linkSel);
+      if (!link) return;
+      tile.classList.add('is-clickable');
+      tile.addEventListener('click', (e) => {
+        if (e.target.closest('a, button, input, textarea, select, label')) return;
+        if (String(window.getSelection())) return; // let people select text
+        if (e.metaKey || e.ctrlKey || e.shiftKey || link.target === '_blank') window.open(link.href, '_blank', 'noopener');
+        else link.click();
+      });
+    });
+  });
+
   /* ----- footer year ----- */
   const year = document.querySelector('[data-year]');
   if (year) year.textContent = String(new Date().getFullYear());
