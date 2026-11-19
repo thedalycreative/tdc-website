@@ -694,10 +694,31 @@ a:hover { color: var(--cerise); }
 .price-meta { font-size: 0.88rem; color: var(--ink-soft); }
 .price-list { list-style: none; margin: 18px 0 24px; padding: 0; display: grid; gap: 10px; flex: 1; }
 .price-list li { position: relative; padding-left: 28px; font-size: 0.95rem; color: var(--ink); }
-.price-list li::before {
-  content: ""; position: absolute; left: 0; top: 0.3em; width: 16px; height: 16px; border-radius: 50%;
-  background: var(--teal); box-shadow: 7px 0 0 -2px var(--marigold); mix-blend-mode: multiply;
+/* bullets: two overlapping circles in the card's own colour pair; on card hover the
+   second circle slides under the first, one bullet after another, leaving a single dot */
+.price-list li { isolation: isolate; }
+.price-list li::before, .price-list li::after {
+  content: ""; position: absolute; top: 0.38em; width: 13px; height: 13px; border-radius: 50%;
 }
+.price-list li::before { left: 0; background: var(--b1, var(--marigold)); }
+.price-list li::after {
+  left: 8px; background: var(--b2, var(--cerise)); mix-blend-mode: multiply; opacity: 0.9;
+  transition: left .45s cubic-bezier(.34, 1.56, .64, 1), opacity .3s ease .15s;
+}
+.price-card:hover .price-list li::after { left: 0; opacity: 0; }
+.price-list li:nth-child(2)::after { transition-delay: .04s, .19s; }
+.price-list li:nth-child(3)::after { transition-delay: .08s, .23s; }
+.price-list li:nth-child(4)::after { transition-delay: .12s, .27s; }
+.price-list li:nth-child(5)::after { transition-delay: .16s, .31s; }
+.price-list li:nth-child(6)::after { transition-delay: .2s, .35s; }
+.price-list li:nth-child(n+7)::after { transition-delay: .24s, .39s; }
+@media (prefers-reduced-motion: reduce) { .price-list li::after { transition: none; } }
+/* each pricing container gets its own pair */
+#websites .price-card:nth-child(1) { --b1: var(--marigold);   --b2: var(--cerise); }
+#websites .price-card:nth-child(2) { --b1: var(--lilac);      --b2: var(--orange); }
+#websites .price-card:nth-child(3) { --b1: var(--teal);       --b2: var(--purple-mid); }
+#care .price-card:nth-child(1)     { --b1: var(--cerise);     --b2: var(--teal); }
+#care .price-card:nth-child(2)     { --b1: var(--purple-mid); --b2: var(--marigold); }
 .price-card .btn { margin-top: auto; }
 .price-card.is-featured { box-shadow: inset 0 0 0 3px var(--purple-deep), 0 2px 4px rgba(42, 30, 63, 0.05), 0 18px 40px -18px rgba(42, 30, 63, 0.34); }
 .price-badge {
